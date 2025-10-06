@@ -127,6 +127,19 @@
             </div>
             <button type="submit" class="btn-submit">Submit Application</button>
           </form>
+		  <script>
+			document.getElementById('jobForm').addEventListener('submit', function(event) {
+				event.preventDefault();
+	
+				const fullname = document.getElementById('fullname').value;
+				const email = document.getElementById('email').value;
+				const message = document.getElementById('message').value;
+	
+				let mailtoLink = `mailto:info@experts.com?subject=Job Application&body=Hi, I am ${encodeURIComponent(fullname)}.%0A%0AI would like to apply for a position: ${encodeURIComponent(message)}.%0A%0AYou can reach me at: ${encodeURIComponent(email)}.%0A%0ABest regards,%0A${encodeURIComponent(fullname)}`;
+	
+				window.location.href = mailtoLink;
+			});
+		</script>
         </div>
 		 
 		<div class="testimonial-vertical-carousel">
