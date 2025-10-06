@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Experts QA - Software Quality Assurance Excellence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .top-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .top-header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info span {
+            color: #b0b0b0;
+            font-size: 14px;
+        }
+
+        .contact-info i {
+            color: #00d084;
+            margin-right: 8px;
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-links span {
+            color: #b0b0b0;
+            font-size: 14px;
+        }
+
+        .social-links a {
+            color: #00d084;
+            font-size: 18px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: #00ff9d;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00d084;
+            text-decoration: none;
+            padding: 20px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            padding: 25px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #00d084;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00d084;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23222" width="1200" height="600"/><circle cx="100" cy="100" r="2" fill="%23444"/><circle cx="200" cy="150" r="2" fill="%23444"/><circle cx="300" cy="80" r="2" fill="%23444"/><circle cx="500" cy="200" r="2" fill="%23444"/><circle cx="700" cy="120" r="2" fill="%23444"/><circle cx="900" cy="180" r="2" fill="%23444"/><circle cx="1100" cy="90" r="2" fill="%23444"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(0, 208, 132, 0.1), transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #00d084 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .tagline {
+            font-size: 24px;
+            color: #00ff9d;
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            color: #b0b0b0;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: #fff;
+        }
+
+        h2 span {
+            color: #00d084;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .about-card {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1f1f1f 100%);
+            padding: 40px;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #00d084, #00ff9d);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .about-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 208, 132, 0.2);
+        }
+
+        .about-card i {
+            font-size: 48px;
+            color: #00d084;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .about-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .about-card p {
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        #service {
+            background: #0f0f0f;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
+            padding: 40px;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            border: 1px solid #333;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(135deg, #2d2d2d 0%, #1f1f1f 100%);
+            box-shadow: 0 20px 40px rgba(0, 208, 132, 0.15);
+        }
+
+        .service-card i {
+            font-size: 52px;
+            color: #00d084;
+            margin-bottom: 25px;
+            display: block;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover i {
+            transform: scale(1.1);
+            color: #00ff9d;
+        }
+
+        .service-card h4 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #00d084;
+        }
+
+        .service-card p {
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        .feature-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
+            border-radius: 15px;
+        }
+
+        .feature-section.reverse {
+            direction: rtl;
+        }
+
+        .feature-section.reverse > * {
+            direction: ltr;
+        }
+
+        .feature-content h3 {
+            font-size: 28px;
+            color: #00d084;
+            margin-bottom: 15px;
+        }
+
+        .feature-content h4 {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .feature-content .lead {
+            font-size: 18px;
+            color: #00ff9d;
+            margin-bottom: 15px;
+        }
+
+        .video-wrapper {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+
+        .device-image {
+            text-align: center;
+        }
+
+        .device-image img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(0, 208, 132, 0.3));
+        }
+
+        /* Team Section */
+        .team-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .team-form {
+            background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #00d084;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #00d084;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00ff9d;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(0, 208, 132, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #00d084 0%, #00ff9d 100%);
+            border: none;
+            border-radius: 8px;
+            color: #1a1a1a;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 208, 132, 0.3);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
+            padding: 40px;
+            border-radius: 15px;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-item {
+            text-align: center;
+            opacity: 0;
+            position: absolute;
+            transition: opacity 0.7s ease;
+        }
+
+        .testimonial-item.active {
+            opacity: 1;
+            position: relative;
+        }
+
+        .testimonial-item img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 4px solid #00d084;
+            object-fit: cover;
+        }
+
+        .testimonial-item h5 {
+            font-size: 22px;
+            color: #00d084;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-item .role {
+            color: #00ff9d;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .testimonial-item p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #0f0f0f;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info-section {
+            background: linear-gradient(135deg, #1f1f1f 0%, #2d2d2d 100%);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+
+        .contact-info-section h3 {
+            font-size: 28px;
+            color: #00d084;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: #00d084;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 208, 132, 0.1);
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .contact-item span {
+            color: #b0b0b0;
+            font-size: 16px;
+        }
+
+        .social-section {
+            margin-top: 40px;
+        }
+
+        .social-section h4 {
+            color: #00d084;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-buttons a {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 208, 132, 0.1);
+            border-radius: 10px;
+            color: #00d084;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .social-buttons a:hover {
+            background: #00d084;
+            color: #1a1a1a;
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        footer p {
+            color: #b0b0b0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .top-header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero .tagline {
+                font-size: 18px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .about-grid,
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-section,
+            .team-section,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-section.reverse {
+                direction: ltr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fa fa-phone"></i> 072-260-532</span>
+                <span><i class="fa fa-envelope"></i> info@expertsqa.com</span>
+            </div>
+            <div class="social-links">
+                <span>Meet us on</span>
+                <a href="https://www.facebook.com/expertsqa/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                <a href="https://mk.linkedin.com/company/expertsqa" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/expertsqa/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">Experts QA</a>
+            <i class="fas fa-bars mobile-menu" onclick="toggleMenu()"></i>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#service">SERVICES</a></li>
+                <li><a href="#team">TEAM</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="tagline">Think quality, think</div>
+            <h1>Experts QA!</h1>
+            <div class="subtitle">We can see Experts QA in your future.</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>WE ARE <span>EXPERTS QA</span></h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h3>Who we are?</h3>
+                    <p>Experts QA is a company specialized in software quality assurance. Based in Skopje, Macedonia, we service clients from all over the globe. With over 10 years of experience in Software Quality Assurance offering various types and levels of testing starting with functional and non-functional testing.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>VISION</h3>
+                    <p>We envision a future where we help our clients achieve their business goals by delivering superior software quality assurance services, while also providing a fulfilling work environment for our employees. We aim to expand our reach and diversify our services while maintaining a strong focus on client and employee satisfaction.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>MISSION</h3>
+                    <p>To provide exceptional software quality assurance services to our clients, with a commitment to continuous innovation, improvement, and collaboration with our clients. We strive to exceed our clients' expectations and establish long-term partnerships with them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="service">
+        <div class="container">
+            <h2>WHAT <span>WE</span> DO?</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h4>On-Demand QA Teams</h4>
+                    <p>Offering hourly or fixed price options for whole QA teams with services for Functional testing, both Manual and Automation, and Performance testing. This includes setting up QA processes, both as a from scratch for new projects when they are created, as well as trying to seamlessly integrate to an existing Dev process. Every team has a Lead person that helps establish QA process and maintain the process and quality of work for the whole team, ensuring that the team is on track and ready to deliver.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>Dedicated QA Resources</h4>
+                    <p>Offering the possibility for a dedicated team member as an addition to an existing QA team, whether is Manual, Automation Functional testing or Performance engineer. Depending on the resource level, we offer support from a Senior/Experienced engineer if lower level QA's are hired.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bug"></i>
+                    <h4>Managed QA Services</h4>
+                    <p>We offer QA services as a standalone, not integrated, or simply in a limited timely manner. These scenarios are usually for two types of services. First is for agencies, or companies that need periodical checks, for smaller projects that are about to be shipped to production or simply for Maintenance purposes. Second is for specialized types of testing like Performance, Load or Stress testing where we are hired when needed, even if there is an existing QA team working on a project.</p>
+                </div>
+            </div>
+
+            <div class="feature-section">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/hMfPCdF07hA?rel=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <div class="feature-content">
+                    <h3>We agree with Linda!</h3>
+                    <h4>Quality Assurance process should start early and save cost on later defects!</h4>
+                    <p class="lead">Bugs are expensive!</p>
+                    <p>To illustrate: if a bug is found in the requirements-gathering phase, the cost could be $100. If the product owner doesn't find that bug until the QA testing phase, then the cost could be $1,500. If it's not found until production, the cost could be $10,000. And if the bug is never found, it could be secretly costing the company money and no one could be the wiser. A 2003 study commissioned by the Department of Commerce's National Institute of Standards and Technology found that software bugs cost the US economy $59.5 billion annually.</p>
+                </div>
+            </div>
+
+            <div class="feature-section reverse">
+                <div class="device-image">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%231a1a1a' width='800' height='600'/%3E%3Cg fill='%2300d084'%3E%3Crect x='50' y='50' width='200' height='350' rx='20' fill='none' stroke='%2300d084' stroke-width='4'/%3E%3Crect x='300' y='100' width='250' height='400' rx='20' fill='none' stroke='%2300d084' stroke-width='4'/%3E%3Crect x='100' y='200' width='120' height='80' rx='5'/%3E%3Crect x='350' y='250' width='150' height='100' rx='5'/%3E%3Ccircle cx='160' cy='380' r='15'/%3E%3Ccircle cx='425' cy='480' r='20'/%3E%3C/g%3E%3C/svg%3E" alt="Devices">
+                </div>
+                <div class="feature-content">
+                    <h3>Don't have enough physical devices for testing?</h3>
+                    <h4>Don't worry, we have your back!</h4>
+                    <p>We are equipped with many physical devices, ranging from iOS, Android, Windows, Linux, and MacOS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <h2>JOIN <span>OUR</span> TEAM</h2>
+    
+            <div class="team-section">
+                <div class="team-form">
+                    <form id="jobForm">
+                        <div class="form-group">
+                            <label>NAME</label>
+                            <input type="text" id="fullname" required>
+                        </div>
+                        <div class="form-group">
+                            <label>EMAIL</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>JOB POSITION</label>
+                            <textarea id="message" placeholder="What job position are you applying for?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Application</button>
+                    </form>
+                </div>
+    
+                <!-- Testimonials Section -->
+                <div class="testimonials">
+                    <div class="testimonial-item active">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle fill='%2300d084' cx='100' cy='100' r='100'/%3E%3Ctext x='100' y='120' font-size='80' fill='%231a1a1a' text-anchor='middle' font-family='Arial'%3ED%3C/text%3E%3C/svg%3E" alt="Davor">
+                        <h5>DAVOR</h5>
+                        <div class="role">QA Automation Engineer</div>
+                        <p>I enjoy working at ExpertsQA because it enables a relaxed working environment and allows for opportunities for learning and growth.</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle fill='%2300d084' cx='100' cy='100' r='100'/%3E%3Ctext x='100' y='120' font-size='80' fill='%231a1a1a' text-anchor='middle' font-family='Arial'%3EV%3C/text%3E%3C/svg%3E" alt="Viktorija">
+                        <h5>VIKTORIJA</h5>
+                        <div class="role">QA Engineer</div>
+                        <p>Great company culture, management and best Software Quality, because quality software is always the result of intelligent effort we're doing.</p>
+                    </div>
+                    <div class="testimonial-item">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle fill='%2300d084' cx='100' cy='100' r='100'/%3E%3Ctext x='100' y='120' font-size='80' fill='%231a1a1a' text-anchor='middle' font-family='Arial'%3EN%3C/text%3E%3C/svg%3E" alt="Nikola">
+                        <h5>NIKOLA</h5>
+                        <div class="role">QA Lead</div>
+                        <p>Working at ExpertsQA gives me the opportunity to lead, inspire, and grow with a talented and passionate QA team every day.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    

@@ -1,392 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		
-		<title>Experts QA</title>
-		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-		<meta name="keywords" content="">
-		<meta name="description" content="">
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<link rel="stylesheet" href="css/animate.min.css">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/templatemo-style.css">
-		<script src="js/jquery.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.singlePageNav.min.js"></script>
-		<script src="js/typed.js"></script>
-		<script src="js/wow.min.js"></script>
-		<script src="js/custom.js"></script>
-	</head>
-	<body id="top">
+<head>
+    <meta charset="utf-8">
+    <title>Experts QA - Software Quality Assurance Excellence</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fa fa-phone"></i> 072-260-532</span>
+                <span><i class="fa fa-envelope"></i> info@expertsqa.com</span>
+            </div>
+            <div class="social-links">
+                <span>Meet us on</span>
+                <a href="https://www.facebook.com/expertsqa/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                <a href="https://mk.linkedin.com/company/expertsqa" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/expertsqa/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
 
-		<!-- start preloader -->
-		<div class="preloader">
-			<div class="sk-spinner sk-spinner-wave">
-     	 		<div class="sk-rect1"></div>
-       			<div class="sk-rect2"></div>
-       			<div class="sk-rect3"></div>
-      	 		<div class="sk-rect4"></div>
-      			<div class="sk-rect5"></div>
-     		</div>
-    	</div>
-    	<!-- end preloader -->
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">Experts QA</a>
+            <i class="fas fa-bars mobile-menu" onclick="toggleMenu()"></i>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#service">SERVICES</a></li>
+                <li><a href="#team">TEAM</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <!-- start header -->
-        <header>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <p><i class="fa fa-phone"></i>  072-260-532</p>
-                    </div>
-                    <div class="col-md-3 col-sm-4 col-xs-12">
-                        <p><i class="fa fa-envelope-o"></i>  info@expertsqa.com</p>
-                    </div>
-                    <div class="col-md-5 col-sm-4 col-xs-12">
-                        <ul class="social-icon">
-                            <li><span>Meet us on</span></li>
-                            <li><a href="https://www.facebook.com/expertsqa/" class="fa fa-facebook" target="_blank" rel="noopener noreferrer"></a></li>
-                            <li><a href="https://mk.linkedin.com/company/expertsqa" class="fa fa-linkedin" target="_blank" rel="noopener noreferrer"></a></li>
-                            <li><a href="https://www.instagram.com/expertsqa/" class="fa fa-instagram" target="_blank" rel="noopener noreferrer"></a></li>
-                        </ul>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="tagline">Think quality, think</div>
+            <h1>Experts QA!</h1>
+            <div class="subtitle">We can see Experts QA in your future.</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>WE ARE <span>EXPERTS QA</span></h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-puzzle-piece"></i>
+                    <h3>Who we are?</h3>
+                    <p>Experts QA is a company specialized in software quality assurance. Based in Skopje, Macedonia, we service clients globally with over 10 years of experience in functional and non-functional testing.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>VISION</h3>
+                    <p>We help our clients achieve their business goals by delivering superior QA services while providing a fulfilling work environment for our employees.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>MISSION</h3>
+                    <p>We strive to exceed our clients' expectations with continuous innovation, improvement, and collaboration, building long-term partnerships.</p>
                 </div>
             </div>
-        </header>
-        <!-- end header -->
+        </div>
+    </section>
 
-    	<!-- start navigation -->
-		<nav class="navbar navbar-default templatemo-nav" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
-					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon icon-bar"></span>
-						<span class="icon icon-bar"></span>
-						<span class="icon icon-bar"></span>
-					</button>
-					<a href="#top" class="navbar-brand">
-						<img src="images/expertsqa1.jpg" alt="Experts QA Logo" class="img-fluid" style="height: 40px;">
-					</a>
-				</div>
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#about">ABOUT</a></li>
-						<li><a href="#service">SERVICES</a></li>
-						<li><a href="#team">TEAM</a></li>
-						<li><a href="#contact">CONTACT</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<!-- end navigation -->
+    <!-- Services Section -->
+    <section id="service">
+        <div class="container">
+            <h2>WHAT <span>WE</span> DO?</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <i class="fas fa-users"></i>
+                    <h4>On-Demand QA Teams</h4>
+                    <p>Full QA teams for functional, automation, and performance testing. We set up QA processes and ensure quality from the start.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>Dedicated QA Resources</h4>
+                    <p>We provide skilled QA professionals as part of your team — manual, automation, or performance testers.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bug"></i>
+                    <h4>Managed QA Services</h4>
+                    <p>We offer standalone QA services for specific projects, performance tests, or maintenance checks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    	<!-- start home -->
-    	<section id="home">
-    		<div class="container">
-    			<div class="row">
-    				<div class="col-md-offset-2 col-md-8">
-    					<h1 class="wow fadeIn" data-wow-offset="50" data-wow-delay="0.9s">Think quality, think  <span>Experts QA!</span></h1>
-    					<div class="element">
-                            <!-- <div class="sub-element"></div> -->
-                            <div class="sub-element">We can see Experts QA in your future.</div>
-                            <!-- <div class="sub-element">Enjoy!</div> -->
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <h2>JOIN <span>OUR</span> TEAM</h2>
+            <div class="team-section">
+                <div class="team-form">
+                    <form id="jobForm">
+                        <div class="form-group">
+                            <label>NAME</label>
+                            <input type="text" id="fullname" required>
                         </div>
-    					<!-- <a data-scroll href="#about" class="btn btn-default wow fadeInUp" data-wow-offset="50" data-wow-delay="0.6s">GET STARTED</a> -->
-    				</div>
-    			</div>
-    		</div>
-    	</section>
-    	<!-- end home -->
-
-    	<!-- start about -->
-		<section id="about">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-    					<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">WE ARE <span>EXPERTS QA</span></h2>
-    				</div>
-					<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.6s">
-						<div class="media">
-							<div class="media-heading-wrapper">
-								<div class="media-object pull-left">
-									<i class="fa fa-puzzle-piece"></i>
-								</div>
-								<h3 class="media-heading">Who we are?</h3>
-							</div>
-							<div class="media-body">
-								<p>Experts QA is a company specialized in software quality assurance. Based in Skopje, Macedonia, we service clients from all over the globe. With over 10 years of experience in Software Quality Assurance offering various types and levels of testing starting with functional and non-functional testing.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-offset="50" data-wow-delay="0.9s">
-						<div class="media">
-							<div class="media-heading-wrapper">
-								<div class="media-object pull-left">
-									<i class="fa fa-lightbulb-o"></i>
-								</div>
-								<h3 class="media-heading">VISION</h3>
-							</div>
-							<div class="media-body">
-								<p>We envision a future where we help our clients achieve their business goals by delivering superior software quality assurance services, while also providing a fulfilling work environment for our employees. We aim to expand our reach and diversify our services while maintaining a strong focus on client and employee satisfaction.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
-						<div class="media">
-							<div class="media-heading-wrapper">
-								<div class="media-object pull-left">
-									<i class="fa fa-rocket"></i>
-								</div>
-								<h3 class="media-heading">MISSION</h3>
-							</div>
-							<div class="media-body">
-								<p>To provide exceptional software quality assurance services to our clients, with a commitment to continuous innovation, improvement, and collaboration with our clients.
-
-									We strive to exceed our clients' expectations and establish long-term partnerships with them.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- end about -->
-
-    	<!-- start service -->
-    	<section id="service">
-			<div class="container">
-				<div class="row hover-row">
-					<div class="col-md-12">
-						<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">WHAT <span>WE</span> DO?</h2>
-					</div>
-					<div class="col-md-4 wow fadeIn" data-wow-offset="50" data-wow-delay="0.6s">
-						<i class="fa fa-users"></i>
-						<h4>On-Demand QA Teams</h4>
-						<p>Offering hourly or fixed price options for whole QA teams with services for Functional testing, both Manual and Automation, and Performance testing. This includes setting up QA processes, both as a from scratch for new projects when they are created, as well as trying to seamlessly integrate to an existing Dev process.<br>
-							Every team has a Lead person that helps establish QA process and maintain the process and quality of work for the whole team, ensuring that the team is on track and ready to deliver</p>
-					</div>
-					<div class="col-md-4 wow fadeIn" data-wow-offset="50" data-wow-delay="0.9s">
-						<i class="fa fa-laptop"></i>
-						<h4>Dedicated QA Resources</h4>
-						<p>Offering the possibility for a dedicated team member as an addition to an existing QA team, whether is Manual, Automation Functional testing or Performance engineer.<br>
-							Depending on the resource level, we offer support from a Senior/Experienced engineer if lower level QA’s are hired.</p>
-					</div>
-					<div class="col-md-4 wow fadeIn" data-wow-offset="50" data-wow-delay="0.6s">
-						<i class="fa fa-bug"></i>
-						<h4>Managed QA Services</h4>
-						<p>We offer QA services as a standalone, not integrated, or simply in a limited timely manner. These scenarios are usually for two types of services. First is for agencies, or companies that need periodical checks, for smaller projects that are about to be shipped to production or simply for Maintenance purposes (periodical checks or when there are versions upgrades for any part of the system). Second is for specialized types of testing like Performance, Load or Stress testing where we are hired when needed, even if there is an existing QA team working on a project.</p>
-					</div>
-				</div>
-				<!-- Linda -->
-				<div class="row">
-					<div class="col-md-6 wow fadeIn active" data-wow-offset="50" data-wow-delay="0.6s">
-						<div class="embed-responsive embed-responsive-16by9">
-							<iframe class="embed-responsive-item" width="600" height="355" src="https://www.youtube.com/embed/hMfPCdF07hA?rel=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-						</div>
-					</div>
-					<div class="col-md-6 wow fadeIn d-flex" data-wow-offset="50" data-wow-delay="0.9s">
-						<div class="feature-content">
-							<h7>We agree with Linda!</h7>
-							<h6>Quality Assurance process should start-on early and save cost on later defects!</h2>
-							<p class="lead">Bugs are expensive!</p>
-							<p>To illustrate: if a bug is found in the requirements-gathering phase, the cost could be $100. If the product owner doesn’t find that bug until the QA testing phase, then the cost could be $1,500. If it’s not found until production, the cost could be $10,000. And if the bug is never found, it could be secretly costing the company money and no one could be the wiser. A 2003 study commissioned by the Department of Commerce’s National Institute of Standards and Technology found that software bugs cost the US economy $59.5 billion annually.</p>
-						</div>
-					</div>
-				</div>
-				<!--Devices-->
-				<div class="row image-text-row">  <div class="feature-content d-flex align-items-center">
-					<div class="col-md-6 feature-caption">
-						<h7>Don't have enough physical devices for testing?</h7>
-						<h6>Don't worry, we have your back!</h6>
-						<p>We are equipped with many physical devices, ranging from iOS, Android, Windows, Linux, and MacOS.</p>
-					</div>
-					<div class="col-md-6 text-sm-center hidden-md-down image-container">
-						<img src="images/devices.png" alt="All Devices" class="img-fluid">
-					</div>
-				</div>
-			</div>
-			</div>
-		</section>
-    	<!-- end servie -->
-
-
-    	<!-- start team -->
-    	<section id="team">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">JOIN <span>OUR</span> TEAM</h2>
-					</div>
-				</div>
-				<div class="row">  <div class="col-md-6 col-sm-12" data-wow-delay="0.9s">  <form id="jobForm">
-							<label>NAME</label>
-							<input name="fullname" type="text" class="form-control" id="fullname" required>
-			
-							<label>EMAIL</label>
-							<input name="email" type="email" class="form-control" id="email" required>
-			
-							<label>JOB POSITION</label>
-							<textarea name="message" rows="4" class="form-control" id="message" placeholder="What job position are you applying for?"></textarea>
-			
-							<input type="submit" class="form-control btn btn-success" value="Submit Application">
-						</form>
-			
-						<script>
-							document.getElementById('jobForm').addEventListener('submit', function(event) {
-								event.preventDefault();
-					
-								const fullname = document.getElementById('fullname').value;
-								const email = document.getElementById('email').value;
-								const message = document.getElementById('message').value;
-					
-								let mailtoLink = `mailto:your_email@example.com?subject=Job Application&body=Hi, I am ${encodeURIComponent(fullname)},\n\nI would like to apply for a position ${encodeURIComponent(message)}.\n\n${encodeURIComponent(email)}\n\n`;
-					
-								window.location.href = mailtoLink;
-							});
-						</script>
-					</div>
-			
-					<div class="col-md-6 col-sm-12 testimonial-vertical-carousel-container">
-						<div class="testimonial-vertical-carousel">
-					
-							<div class="testimonial-slide active">
-								<div class="row justify-content-center">
-									<div class="col-lg-8">
-										<img class="rounded-circle shadow-1-strong mb-4" src="images/davor.jpeg" alt="Davor" style="width: 150px;">
-										<h5 class="mb-3">DAVOR</h5>
-										<p>QA Automation Engineer</p>
-										<p class="text-muted">
-											I enjoy working at ExpertsQA because it enables a relaxed working environment and allows for opportunities for learning and growth.
-										</p>
-										</div>
-								</div>
-							</div>
-					
-							<div class="testimonial-slide">
-								<div class="row justify-content-center">
-									<div class="col-lg-8">
-										<img class="rounded-circle shadow-1-strong mb-4" src="images/viktorija.JPG" alt="Dalibor" style="width: 150px;">
-										<h5 class="mb-3">VIKTORIJA</h5>
-										<p>QA Engineer</p>
-										<p class="text-muted">
-											Great company culture, management and best Software Quality, because quality software is always the result of intelegent effort we’re doing.
-										</p>
-										</div>
-								</div>
-							</div>
-							<div class="testimonial-slide">
-								<div class="row justify-content-center">
-									<div class="col-lg-8">
-										<img class="rounded-circle shadow-1-strong mb-4" src="images/vito.png" alt="Dalibor" style="width: 150px;">
-										<h5 class="mb-3">VITO</h5>
-										<p>QA Automation Engineer</p>
-										<p class="text-muted">
-											I've experienced significant professional growth since joining this company. The opportunities for development and advancement are exceptional.
-										</p>
-										</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<script>
-						const sliderContainer = document.querySelector('.testimonial-vertical-carousel-container');
-						const slider = document.querySelector('.testimonial-vertical-carousel');
-						const slides = document.querySelectorAll('.testimonial-slide');
-						let currentSlide = 0;
-						const slideHeight = slides[0].offsetHeight; // Get the height of one slide
-					
-						slider.style.height = `${slideHeight}px`; // Set initial height of the slider
-					
-						function showSlide(n) {
-							slides[currentSlide].classList.remove('active');
-							slides[n].classList.add('active');
-							currentSlide = n;
-							slider.style.transform = `translateY(-${currentSlide * slideHeight}px)`;
-						}
-					
-						setInterval(() => {
-							currentSlide = (currentSlide + 1) % slides.length;
-							showSlide(currentSlide);
-						}, 5000);
-					</script>
-				</div>
-			</div>
-		</section>
-    	<!-- end team -->    	
-
-    	<!-- start contact -->
-    	<section id="contact">
-    		<div class="container">
-    			<div class="row">
-    				<div class="col-md-12">
-    					<h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">QUOTES <span>AND</span> RATES</h2>
-    				</div>
-    				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-offset="50" data-wow-delay="0.9s">
-						<form id="contactForm">
-							<label>NAME</label>
-							<input name="fullname" type="text" class="form-control" id="2fullname" required>
-					
-							<label>EMAIL</label>
-							<input name="email" type="email" class="form-control" id="2email" required>
-					
-							<label>MESSAGE</label>
-							<textarea name="message" rows="4" class="form-control" id="2message" required></textarea>
-					
-							<input type="submit" class="form-control" value="Submit">
-						</form>
-					
-						<script>
-							document.getElementById('contactForm').addEventListener('submit', function(event) {
-								event.preventDefault();
-					
-								const fullname = document.getElementById('2fullname').value;
-								const email = document.getElementById('2email').value;
-								const message = document.getElementById('2message').value;
-					
-								let mailtoLink = `mailto:simona@expertsqa.com?subject=Contact Us&body=Hi, I am ${encodeURIComponent(fullname)},\n\n${encodeURIComponent(message)}\n\n${encodeURIComponent(email)}\n\n`;
-					
-								window.location.href = mailtoLink;
-							});
-						</script>
-					</div>
-				
-    				<div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight" data-wow-offset="50" data-wow-delay="0.6s">
-    					<address>
-    						<p class="address-title">CONTACT US</p>
-    						<p><i class="fa fa-phone"></i> 072-260-532</p>
-    						<p><i class="fa fa-envelope-o"></i> info@expertsqa.com</p>
-    						<p><i class="fa fa-map-marker"></i> 3rd Macedonian Boulevard 70/2 </p>
-    					</address>
-    					<ul class="social-icon">
-    						<li><h4>WE ARE SOCIAL</h4></li>
-                            <li><a href="https://www.facebook.com/expertsqa/" class="fa fa-facebook" target="_blank" rel="noopener noreferrer"></a></li>
-                            <li><a href="https://mk.linkedin.com/company/expertsqa" class="fa fa-linkedin" target="_blank" rel="noopener noreferrer"></a></li>
-                            <li><a href="https://www.instagram.com/expertsqa/" class="fa fa-instagram" target="_blank" rel="noopener noreferrer"></a></li>
-    					</ul>
-    				</div>
-    			</div>
-    		</div>
-    	</section>
-    	<!-- end contact -->
-
-        <!-- start copyright -->
-        <footer id="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <p class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">
-                       	Copyright &copy; 2025 Experts QA</p>
-                    </div>
+                        <div class="form-group">
+                            <label>EMAIL</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>JOB POSITION</label>
+                            <textarea id="message" placeholder="What job position are you applying for?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Submit Application</button>
+                    </form>
                 </div>
             </div>
-        </footer>
-        <!-- end copyright -->
+        </div>
+    </section>
 
-	</body>
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Experts QA. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
 </html>
-
-	
