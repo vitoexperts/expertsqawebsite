@@ -63,17 +63,19 @@
         <div class="about-card">
           <i class="fas fa-puzzle-piece"></i>
           <h3>Who we are?</h3>
-          <p>Experts QA is a company specialized in software quality assurance. Based in Skopje, Macedonia, we service clients globally with over 10 years of experience in functional and non-functional testing.</p>
+          <p>Experts QA is a company specialized in software quality assurance. Based in Skopje, Macedonia, we service clients from all over the globe. With over 10 years of experience in Software Quality Assurance offering various types and levels of testing starting with functional and non-functional testing.</p>
         </div>
         <div class="about-card">
           <i class="fas fa-lightbulb"></i>
           <h3>VISION</h3>
-          <p>We help our clients achieve their business goals by delivering superior QA services while providing a fulfilling work environment for our employees.</p>
+          <p>We envision a future where we help our clients achieve their business goals by delivering superior software quality assurance services, while also providing a fulfilling work environment for our employees. We aim to expand our reach and diversify our services while maintaining a strong focus on client and employee satisfaction.</p>
         </div>
         <div class="about-card">
           <i class="fas fa-rocket"></i>
           <h3>MISSION</h3>
-          <p>We strive to exceed our clients' expectations with continuous innovation, improvement, and collaboration, building long-term partnerships.</p>
+          <p>To provide exceptional software quality assurance services to our clients, with a commitment to continuous innovation, improvement, and collaboration with our clients.
+
+			We strive to exceed our clients' expectations and establish long-term partnerships with them.</p>
         </div>
       </div>
     </div>
@@ -87,17 +89,17 @@
         <div class="service-card">
           <i class="fas fa-users"></i>
           <h4>On-Demand QA Teams</h4>
-          <p>Full QA teams for functional, automation, and performance testing. We set up QA processes and ensure quality from the start.</p>
+          <p>Offering hourly or fixed price options for whole QA teams with services for Functional testing, both Manual and Automation, and Performance testing. This includes setting up QA processes, both as a from scratch for new projects when they are created, as well as trying to seamlessly integrate to an existing Dev process.<br> Every team has a Lead person that helps establish QA process and maintain the process and quality of work for the whole team, ensuring that the team is on track and ready to deliver.</p>
         </div>
         <div class="service-card">
           <i class="fas fa-laptop-code"></i>
           <h4>Dedicated QA Resources</h4>
-          <p>We provide skilled QA professionals as part of your team — manual, automation, or performance testers.</p>
+          <p>Offering the possibility for a dedicated team member as an addition to an existing QA team, whether is Manual, Automation Functional testing or Performance engineer. <br> epending on the resource level, we offer support from a Senior/Experienced engineer if lower level QA’s are hired.</p>
         </div>
         <div class="service-card">
           <i class="fas fa-bug"></i>
           <h4>Managed QA Services</h4>
-          <p>We offer standalone QA services for specific projects, performance tests, or maintenance checks.</p>
+          <p>We offer QA services as a standalone, not integrated, or simply in a limited timely manner. These scenarios are usually for two types of services. First is for agencies, or companies that need periodical checks, for smaller projects that are about to be shipped to production or simply for Maintenance purposes (periodical checks or when there are versions upgrades for any part of the system). Second is for specialized types of testing like Performance, Load or Stress testing where we are hired when needed, even if there is an existing QA team working on a project.</p>
         </div>
       </div>
     </div>
@@ -108,30 +110,7 @@
     <div class="container">
       <h2>JOIN <span>OUR</span> TEAM</h2>
 
-      <div class="testimonials">
-        <div class="testimonial-item active">
-          <img src="images/davor.jpeg" alt="Davor">
-          <h5>DAVOR</h5>
-          <div class="role">QA Automation Engineer</div>
-          <p>I enjoy working at ExpertsQA because it enables a relaxed working environment and allows for opportunities for learning and growth.</p>
-        </div>
-        <div class="testimonial-item">
-          <img src="images/viktorija.JPG" alt="Viktorija">
-          <h5>VIKTORIJA</h5>
-          <div class="role">QA Engineer</div>
-          <p>Great company culture, management and best Software Quality, because quality software is always the result of intelligent effort we're doing.</p>
-        </div>
-        <div class="testimonial-item">
-          <img src="images/vito.png" alt="Vito">
-          <h5>VITO</h5>
-          <div class="role">QA Automation Engineer</div>
-          <p>I've experienced significant professional growth since joining this company. The opportunities for development and advancement are exceptional.</p>
-        </div>
-      </div>
-
-      <br><br>
-
-      <div class="team-section">
+	  <div class="team-section">
         <div class="team-form">
           <form id="jobForm">
             <div class="form-group">
@@ -149,6 +128,62 @@
             <button type="submit" class="btn-submit">Submit Application</button>
           </form>
         </div>
+		 
+		<div class="testimonial-vertical-carousel">
+			<div class="testimonial-item active">
+			  <img src="images/davor.jpeg" alt="Davor">
+			  <h5>DAVOR</h5>
+			  <div class="role">QA Automation Engineer</div>
+			  <p>I enjoy working at ExpertsQA because it enables a relaxed working environment and allows for opportunities for learning and growth.</p>
+			</div>
+			<div class="testimonial-item">
+			  <img src="images/viktorija.JPG" alt="Viktorija">
+			  <h5>VIKTORIJA</h5>
+			  <div class="role">QA Engineer</div>
+			  <p>Great company culture, management and best Software Quality, because quality software is always the result of intelligent effort we're doing.</p>
+			</div>
+			<div class="testimonial-item">
+			  <img src="images/vito.png" alt="Vito">
+			  <h5>VITO</h5>
+			  <div class="role">QA Automation Engineer</div>
+			  <p>I've experienced significant professional growth since joining this company. The opportunities for development and advancement are exceptional.</p>
+			</div>
+		  </div>
+
+	  <script>
+		const slides = document.querySelectorAll('.testimonial-item');
+		let currentSlide = 0;
+
+		function showSlide(n) {
+  			slides[currentSlide].classList.remove('active');
+  			slides[n].classList.add('active');
+  			currentSlide = n;
+		}
+
+		const slider = document.querySelector('.testimonial-vertical-carousel');
+
+		function showSlide(n) {
+			slides[currentSlide].classList.remove('active');
+			slides[n].classList.add('active');
+			currentSlide = n;
+
+			// Adjust container height to fit current slide
+			const slideHeight = slides[n].offsetHeight;
+			slider.style.height = `${slideHeight}px`;
+		}
+
+		setInterval(() => {
+			const nextSlide = (currentSlide + 1) % slides.length;
+			showSlide(nextSlide);
+		}, 5000);
+
+// Set initial height
+slider.style.height = `${slides[0].offsetHeight}px`;
+
+
+	</script>
+
+      <br><br>
       </div>
     </div>
   </section>

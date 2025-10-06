@@ -517,6 +517,58 @@
 	font-size: 15px;
 	line-height: 1.6;
   }
+  .testimonial-vertical-carousel {
+	position: relative;
+	overflow: hidden;              /* hide other slides */
+	display: flex;
+	justify-content: center;        /* horizontal centering */
+	align-items: center;            /* vertical centering */
+	width: 100%;
+	min-height: 400px;              /* ensures enough height for content */
+  }
+  
+  .testimonial-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-width: 400px;              /* optional: limit card width */
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	text-align: center;
+	padding: 20px;
+	box-sizing: border-box;
+  }
+  
+  .testimonial-item.active {
+	opacity: 1;
+	position: relative;
+  }
+  
+  .testimonial-item img {
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	margin-bottom: 15px;
+  }
+  
+  .testimonial-item h5 {
+	margin: 10px 0 5px;
+  }
+  
+  .testimonial-item .role {
+	font-size: 0.9rem;
+	color: #888;
+	margin-bottom: 15px;
+  }
+  
+  .testimonial-item p {
+	font-size: 0.95rem;
+	line-height: 1.4;
+  }
+  
+  
   
   /* Responsive */
   @media (max-width: 768px) {
@@ -612,4 +664,5 @@
 	  grid-template-columns: 1fr;
 	}
   }
+  
   
