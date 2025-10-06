@@ -102,6 +102,29 @@
           <p>We offer QA services as a standalone, not integrated, or simply in a limited timely manner. These scenarios are usually for two types of services. First is for agencies, or companies that need periodical checks, for smaller projects that are about to be shipped to production or simply for Maintenance purposes (periodical checks or when there are versions upgrades for any part of the system). Second is for specialized types of testing like Performance, Load or Stress testing where we are hired when needed, even if there is an existing QA team working on a project.</p>
         </div>
       </div>
+	  <!-- Feature Section -->
+<div class="feature-section">
+    <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/hMfPCdF07hA?rel=0&controls=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="feature-content">
+        <h3>We agree with Linda!</h3>
+        <h4>Quality Assurance process should start early and save cost on later defects!</h4>
+        <p class="lead">Bugs are expensive!</p>
+        <p>To illustrate: if a bug is found in the requirements-gathering phase, the cost could be $100. If the product owner doesn't find that bug until the QA testing phase, then the cost could be $1,500. If it's not found until production, the cost could be $10,000. And if the bug is never found, it could be secretly costing the company money and no one could be the wiser. A 2003 study commissioned by the Department of Commerce's National Institute of Standards and Technology found that software bugs cost the US economy $59.5 billion annually.</p>
+    </div>
+</div>
+
+<div class="feature-section reverse">
+    <div class="device-image">
+        <img src="images/devices.png" alt="Devices">
+    </div>
+    <div class="feature-content">
+        <h3>Don't have enough physical devices for testing?</h3>
+        <h4>Don't worry, we have your back!</h4>
+        <p>We are equipped with many physical devices, ranging from iOS, Android, Windows, Linux, and MacOS.</p>
+    </div>
+</div>
     </div>
   </section>
 
@@ -190,11 +213,11 @@
 			showSlide(nextSlide);
 		}, 5000);
 
-// Set initial height
-slider.style.height = `${slides[0].offsetHeight}px`;
+		// Set initial height
+		slider.style.height = `${slides[0].offsetHeight}px`;
 
 
-	</script>
+		</script>
 
       <br><br>
       </div>
@@ -212,8 +235,15 @@ slider.style.height = `${slides[0].offsetHeight}px`;
 		  <h3>Contact Details</h3>
 		  <p><i class="fa fa-phone"></i> <strong>072-260-532</strong></p>
 		  <p><i class="fa fa-envelope"></i> info@expertsqa.com</p>
-		  <p><i class="fa fa-map-marker-alt"></i> 3rd Macedonian Boulevard 70/2, Skopje</p>
-  
+		  <p>
+			<i class="fa fa-map-marker-alt"></i> 3rd Macedonian Boulevard 70/2, Skopje<br>
+			<a href="https://maps.app.goo.gl/GifMLNtMkfqFQ9Cm6" target="_blank" class="get-directions">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get Directions
+			</a>
+		  </p>
+		 <p><i class="fa fa-clock"></i> <strong>Working Hours</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mon-Fri 10:00 - 18:00</p>
+
+		 <h3>Socials</h3>
 		  <div class="social-icons">
 			<a href="https://www.facebook.com/expertsqa/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
 			<a href="https://mk.linkedin.com/company/expertsqa" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
@@ -238,6 +268,19 @@ slider.style.height = `${slides[0].offsetHeight}px`;
 			</div>
 			<button type="submit" class="btn-submit">Send Message</button>
 		  </form>
+		  <script>
+			document.getElementById('contactForm').addEventListener('submit', function(event) {
+				event.preventDefault();
+	
+				const fullname = document.getElementById('contactName').value;
+				const email = document.getElementById('contactEmail').value;
+				const message = document.getElementById('contactMessage').value;
+	
+				let mailtoLink = `mailto:simona@expertsqa.com?subject=Contact Us&body=Hi, I am ${encodeURIComponent(fullname)},\n\n${encodeURIComponent(message)}\n\n${encodeURIComponent(email)}\n\n`;
+	
+				window.location.href = mailtoLink;
+			});
+		</script>
 		</div>
 	  </div>
 	</div>
@@ -248,19 +291,7 @@ slider.style.height = `${slides[0].offsetHeight}px`;
   <footer>
     <p>© 2025 Experts QA. All Rights Reserved.</p>
   </footer>
-
-  <!-- <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-
-    // Preloader fade out
-    window.addEventListener('load', () => {
-      const preloader = document.getElementById('preloader');
-      preloader.style.opacity = '0';
-      setTimeout(() => preloader.style.display = 'none', 500);
-    });
-  </script> -->
+  <!-- JavaScript -->
   <script src="js/main.js"></script>
 
 </body>
