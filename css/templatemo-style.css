@@ -517,10 +517,86 @@
   
   /* ========== RESPONSIVE DESIGN ========== */
   @media (max-width: 768px) {
-	.top-header .container {
-	  flex-direction: column;
-	  gap: 15px;
+	/* --- Default (your desktop layout stays as is) --- */
+.top-header {
+	background: #111;
+	color: #b0b0b0;
+	font-size: 14px;
+	padding: 10px 0;
+  }
+  
+  .top-header .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+  
+  .top-header .contact-info span {
+	margin-right: 20px;
+  }
+  
+  .top-header .social-links {
+	display: flex;
+	align-items: center;
+  }
+  
+  .top-header .social-links span {
+	margin-right: 8px;
+  }
+  
+  .top-header .social-links a {
+	color: #00d084;
+	margin-left: 10px;
+	transition: color 0.3s;
+  }
+  
+  .top-header .social-links a:hover {
+	color: #00ff9d;
+  }
+  
+  /* --- Responsive fix --- */
+  @media (max-width: 768px) {
+	.top-header {
+	  font-size: 13px;
+	  padding: 8px 0;
 	}
+  
+	.top-header .contact-info span {
+	  margin-right: 10px; /* tighter spacing */
+	}
+  
+	.top-header .social-links span {
+	  margin-right: 5px;
+	}
+  
+	.top-header .social-links a {
+	  margin-left: 6px;
+	}
+  
+	.top-header i {
+	  font-size: 13px; /* smaller icons */
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.top-header {
+	  font-size: 12px;
+	  padding: 6px 0;
+	}
+  
+	.top-header .contact-info span {
+	  margin-right: 6px;
+	}
+  
+	.top-header .social-links a {
+	  margin-left: 4px;
+	}
+  
+	.top-header i {
+	  font-size: 12px;
+	}
+  }
+  
   
 	.nav-links {
 	  display: none;
