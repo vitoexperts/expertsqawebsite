@@ -13,10 +13,11 @@
   <link rel="stylesheet" href="css/templatemo-style.css">
 </head>
 <body>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="loader"></div>
-  </div>
+  <!-- Page Loader -->
+<div id="page-loader">
+  <div class="spinner"></div>
+</div>
+
 
   <!-- Top Header -->
   <div class="top-header">
@@ -281,6 +282,12 @@
   </footer>
   <!-- JavaScript -->
   <script src="js/main.js"></script>
-
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("page-loader");
+      loader.classList.add("hidden");
+    });
+  </script>
+  
 </body>
 </html>
