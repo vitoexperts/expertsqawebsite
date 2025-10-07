@@ -597,7 +597,13 @@
 	}
   }
   
-  
+  .navbar-default .navbar-brand {
+    font-weight: 500;
+    font-size: 30px;
+    height: 70px;
+    line-height: 40px;
+    padding: 12px 0px 0px 12px;
+}
 	.nav-links {
 	  display: none;
 	  flex-direction: column;
