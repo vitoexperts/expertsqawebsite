@@ -765,8 +765,9 @@
 
 .contact-info-box .social-icons {
     display: flex;
-    gap: 20px;                   
-    margin-top: 30px;             
+	justify-content: center;
+    gap: 60px;                   
+    margin-top: 20px;             
 }
 
 .contact-info-box .social-icons a {
@@ -774,10 +775,15 @@
     font-size:28px;             
     transition: all 0.3s ease;
 }
+.contact-info-box .social-icons a i {
+	font-size: 32px;         /* <-- actual icon size */
+	display: inline-block;
+	line-height: 1;
+  }
 
 .contact-info-box .social-icons a:hover {
     color: #00ff9d;
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 }
 
   
