@@ -39,6 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
       else navbar.classList.remove("scrolled");
     });
   
+    // Hide mobile menu after clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function() {
+          document.getElementById('navLinks').classList.remove('active');
+          document.querySelector('.mobile-menu').classList.remove('active');
+      });
+  });
+
     /* ========== Smooth Scroll ========== */
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
