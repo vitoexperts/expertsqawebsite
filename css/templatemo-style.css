@@ -706,7 +706,7 @@
 	transform: translateY(-50%) scale(1.1);
   }
   .carousel-btn.left { left: -50px; }
-  .carousel-btn.right { right: -50px; }
+  .carousel-btn.right { right: 10px; }
   
   @media (max-width: 900px){
 	.carousel-btn.left { left: 10px; }
@@ -799,16 +799,89 @@
   
   
 
-  .aurora {
-	position: fixed;
-	inset: 0;
-	z-index: 0;
-	background: radial-gradient(circle at 30% 60%, rgba(0,255,213,0.07), transparent 60%),
-				radial-gradient(circle at 80% 40%, rgba(0,180,255,0.05), transparent 60%);
-	animation: auroraShift 25s ease-in-out infinite alternate;
+  /* --- Dynamic Dark Aurora --- */
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, #010308, #000 85%);
+}
+
+/* four drifting light fields */
+.aurora span {
+  position: absolute;
+  width: 160%;
+  height: 160%;
+  top: -30%;
+  left: -30%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 255, 180, 0.12) 0%,
+    transparent 70%
+  );
+  filter: blur(180px);
+  mix-blend-mode: screen;
+  animation: drift 80s linear infinite;
+}
+
+/* individual colours + motions */
+.aurora span:nth-child(1) {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 255, 180, 0.15) 0%,
+    transparent 70%
+  );
+  animation-duration: 70s;
+  animation-delay: -10s;
+}
+.aurora span:nth-child(2) {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(140, 0, 255, 0.12) 0%,
+    transparent 70%
+  );
+  animation-duration: 90s;
+  animation-delay: -30s;
+}
+.aurora span:nth-child(3) {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 180, 255, 0.12) 0%,
+    transparent 70%
+  );
+  animation-duration: 100s;
+  animation-delay: -50s;
+}
+.aurora span:nth-child(4) {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 100, 200, 0.08) 0%,
+    transparent 80%
+  );
+  animation-duration: 110s;
+  animation-delay: -70s;
+}
+
+/* slow drifting motion */
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
   }
-  @keyframes auroraShift {
-	0% { filter: hue-rotate(0deg); transform: scale(1); }
-	100% { filter: hue-rotate(60deg); transform: scale(1.05); }
+  25% {
+    transform: translate3d(10%, -10%, 0) scale(1.05) rotate(5deg);
   }
+  50% {
+    transform: translate3d(-5%, 5%, 0) scale(1.02) rotate(-3deg);
+  }
+  75% {
+    transform: translate3d(8%, 8%, 0) scale(1.04) rotate(2deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+  
+  
   

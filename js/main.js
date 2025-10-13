@@ -292,49 +292,68 @@
   
 
 
-    /* ---------- Team Carousel ---------- */
+/* ---------- Team Carousel with Button Controls ---------- */
 (function teamCarousel() {
-    const track = document.querySelector(".carousel-track");
-    const cards = document.querySelectorAll(".team-card");
-    const btnLeft = document.querySelector(".carousel-btn.left");
-    const btnRight = document.querySelector(".carousel-btn.right");
-    if (!track || !cards.length) return;
-  
-    let index = 0;
-    const visible = 3;
-    const total = cards.length;
-    let interval;
-  
-    function update() {
-      const offset = -index * (cards[0].offsetWidth + 20);
-      track.style.transform = `translateX(${offset}px)`;
-    }
-  
-    function next() {
-      index = (index + 1) % total;
-      update();
-    }
-  
-    function prev() {
-      index = (index - 1 + total) % total;
-      update();
-    }
-  
-    btnRight.addEventListener("click", next);
-    btnLeft.addEventListener("click", prev);
-  
-    function startAuto() {
-      interval = setInterval(next, 5000);
-    }
-    function stopAuto() {
-      clearInterval(interval);
-    }
-  
-    track.addEventListener("mouseenter", stopAuto);
-    track.addEventListener("mouseleave", startAuto);
-  
+  const track = document.querySelector(".carousel-track");
+  const cards = document.querySelectorAll(".team-card");
+  const btnLeft = document.querySelector(".carousel-btn.left");
+  const btnRight = document.querySelector(".carousel-btn.right");
+  if (!track || !cards.length) return;
+
+  let index = 0;
+  const total = cards.length;
+  const visible = Math.floor(track.offsetWidth / (cards[0].offsetWidth + 20)); // how many visible
+  let interval;
+
+  // Helper: move the carousel
+  function update() {
+    const cardWidth = cards[0].offsetWidth + 20; // 20px gap
+    const offset = -index * cardWidth;
+    track.style.transform = `translateX(${offset}px)`;
+  }
+
+  // Next and previous buttons
+  function next() {
+    index = (index + 1) % total;
+    update();
+  }
+  function prev() {
+    index = (index - 1 + total) % total;
+    update();
+  }
+
+  // Button listeners
+  btnRight.addEventListener("click", () => {
+    next();
+    resetAuto();
+  });
+  btnLeft.addEventListener("click", () => {
+    prev();
+    resetAuto();
+  });
+
+  // Auto-slide setup
+  function startAuto() {
+    interval = setInterval(next, 5000);
+  }
+  function stopAuto() {
+    clearInterval(interval);
+  }
+  function resetAuto() {
+    stopAuto();
     startAuto();
-  })();
-  
+  }
+
+  // Pause on hover
+  track.addEventListener("mouseenter", stopAuto);
+  track.addEventListener("mouseleave", startAuto);
+
+  // Start carousel
+  startAuto();
+
+  // Responsive fix: re-calc on resize
+  window.addEventListener("resize", update);
+})();
+
   })();
   
