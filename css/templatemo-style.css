@@ -322,6 +322,11 @@
     font-weight:900;
     color:#fff
   }
+  .metric .num::after {
+    content: "+";
+    margin-left: 2px;
+    color: #fff; /* optional, matches number color */
+  }
 
   .metric .label{
     font-size:12px;
