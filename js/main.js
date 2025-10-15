@@ -97,6 +97,57 @@
         obs.observe(el);
       });
     })();
+      // === SERVICES MODAL HANDLER ===
+
+      const serviceData = {
+        "on-demand": {
+          title: "On-Demand QA Teams",
+          description: `
+            Offering hourly or fixed price options for whole QA teams with services for Functional testing, both Manual and Automation, and Performance testing. This includes setting up QA processes, both as a from scratch for new projects when they are created, as well as trying to seamlessly integrate to an existing Dev process.
+							Every team has a Lead person that helps establish QA process and maintain the process and quality of work for the whole team, ensuring that the team is on track and ready to deliver
+          `
+        },
+        "dedicated": {
+          title: "Dedicated QA Resources",
+          description: `
+            Offering the possibility for a dedicated team member as an addition to an existing QA team, whether is Manual, Automation Functional testing or Performance engineer.
+							Depending on the resource level, we offer support from a Senior/Experienced engineer if lower level QA’s are hired.
+          `
+        },
+        "managed": {
+          title: "Managed QA Services",
+          description: `
+            We offer QA services as a standalone, not integrated, or simply in a limited timely manner. These scenarios are usually for two types of services. First is for agencies, or companies that need periodical checks, for smaller projects that are about to be shipped to production or simply for Maintenance purposes (periodical checks or when there are versions upgrades for any part of the system). Second is for specialized types of testing like Performance, Load or Stress testing where we are hired when needed, even if there is an existing QA team working on a project.
+          `
+        }
+      };
+
+      // Wait for DOM to load before accessing elements
+      document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("service-modal");
+        const modalTitle = document.getElementById("modal-title");
+        const modalDesc = document.getElementById("modal-description");
+        const closeBtn = document.querySelector(".close-btn");
+
+        // Open modal on click
+        document.querySelectorAll(".service-card").forEach(card => {
+          card.addEventListener("click", () => {
+            const key = card.dataset.service;
+            const service = serviceData[key];
+            if (!service) return;
+            modalTitle.innerText = service.title;
+            modalDesc.innerHTML = service.description;
+            modal.classList.add("active");
+          });
+        });
+
+        // Close modal on overlay or button click
+        closeBtn.addEventListener("click", () => modal.classList.remove("active"));
+        modal.addEventListener("click", (e) => {
+          if (e.target === modal) modal.classList.remove("active");
+        });
+      });
+
   
     /* ---------- Carousel (testimonials) ---------- */
     (function carousel() {

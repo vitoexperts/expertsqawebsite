@@ -91,42 +91,43 @@
     </section>
 
     <!-- SERVICES -->
-    <section id="services" class="panel dark-panel">
-      <div class="container">
-        <h2 class="section-title">CORE <span>SERVICES</span></h2>
-        <div class="grid service-grid">
-          <article class="card-glass service-card interactive-tilt" data-tilt>
-            <div class="icon"><i class="fas fa-users"></i></div>
-            <h4>On-Demand QA Teams</h4>
-            <p>
-              Flexible QA teams available on hourly or fixed-price models — covering Functional, Automation, and Performance testing. 
-              We can establish QA processes from scratch or integrate seamlessly with existing development workflows. 
-              Each team includes a QA Lead to ensure process quality, consistency, and delivery readiness.
-            </p>
-          </article>
-    
-          <!-- Dedicated QA Resources -->
-          <article class="card-glass service-card interactive-tilt" data-tilt>
-            <div class="icon"><i class="fas fa-laptop-code"></i></div>
-            <h4>Dedicated QA Resources</h4>
-            <p>
-              Add experienced QA engineers to your existing team — Manual, Automation, or Performance specialists. 
-              Senior engineers provide oversight and mentorship, ensuring high-quality execution and knowledge sharing across your QA efforts.
-            </p>
-          </article>
-    
-          <!-- Managed QA Services -->
-          <article class="card-glass service-card interactive-tilt" data-tilt>
-            <div class="icon"><i class="fas fa-cogs"></i></div>
-            <h4>Managed QA Services</h4>
-            <p>
-              We deliver standalone QA engagements for short-term or specialized needs such as release readiness checks, 
-              periodic audits, or Performance and Load testing. Ideal for agencies or teams needing flexible QA coverage.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+    <!-- SERVICES -->
+<section id="services" class="panel dark-panel">
+  <div class="container">
+    <h2 class="section-title">OUR <span>SERVICES</span></h2>
+
+    <div class="grid service-grid">
+      <article class="card-glass service-card interactive-tilt" data-tilt data-service="on-demand">
+        <div class="icon"><i class="fas fa-users"></i></div>
+        <h4>On-Demand QA Teams</h4>
+        <p>Flexible QA teams for Functional, Automation, and Performance testing.</p>
+      </article>
+
+      <article class="card-glass service-card interactive-tilt" data-tilt data-service="dedicated">
+        <div class="icon"><i class="fas fa-laptop-code"></i></div>
+        <h4>Dedicated QA Resources</h4>
+        <p>Experienced QA engineers integrated into your existing teams.</p>
+      </article>
+
+      <article class="card-glass service-card interactive-tilt" data-tilt data-service="managed">
+        <div class="icon"><i class="fas fa-cogs"></i></div>
+        <h4>Managed QA Services</h4>
+        <p>Standalone or specialized QA engagements as needed.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL (hidden by default) -->
+<div id="service-modal" class="modal-overlay">
+  <div class="modal-card card-glass">
+    <span class="close-btn">&times;</span>
+    <div class="modal-content">
+      <h4 id="modal-title"></h4>
+      <p id="modal-description"></p>
+    </div>
+  </div>
+</div>
 
     <!-- TEAM CAROUSEL -->
     <section id="team" class="panel">
@@ -195,9 +196,9 @@
             <h3>Meet us on</h3>
 
             <div class="social-links">
-              <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-              <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://mk.linkedin.com/company/expertsqa" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.facebook.com/expertsqa" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/expertsqa" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
           </aside>
           <div class="card-glass contact-form">
