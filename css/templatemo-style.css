@@ -778,8 +778,9 @@
   .carousel-btn.right { right: 10px; }
   
   @media (max-width: 900px){
-	.carousel-btn.left { left: 10px; }
-	.carousel-btn.right { right: 10px; }
+    .carousel-btn {
+      display: none; /* hide on smaller screens */
+    }
   }
 
   /* ---------- CONTACT FORM STYLES ---------- */
