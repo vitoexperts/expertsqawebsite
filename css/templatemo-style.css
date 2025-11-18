@@ -393,7 +393,7 @@
   .about-grid{
     grid-template-columns:repeat(auto-fit,minmax(240px,1fr))
   }
-
+  
   .service-grid{
     grid-template-columns:repeat(auto-fit,minmax(240px,1fr))
   }
@@ -430,6 +430,71 @@
     color:var(--muted);
     font-size:14px
   }
+
+  /* -------------------------
+   Foundation Member Styling (Revised: Simple Text Look)
+   ------------------------- */
+
+.foundation-member {
+  /* Layout */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  
+  /* Spacing */
+  margin-top: 40px; 
+  margin-bottom: 20px;
+  padding: 0; 
+
+  /* Typography */
+  font-size: 1.15em;
+  font-weight: 600;
+  color: #eafaf6; 
+  letter-spacing: 0.5px;
+
+  /* Styling removed as requested */
+  background: none; 
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.company-logo {
+  height: 60px; 
+  width: auto;
+  margin-right: 12px; 
+  filter: none;
+  opacity: 1; 
+}
+
+.foundation-member strong {
+  color: var(--muted); 
+  font-weight: 700; 
+}
+
+/* --- Responsive adjustment for small screens (Phones) --- */
+@media (max-width: 600px) {
+  .foundation-member {
+      font-size: 1em;
+      /* Ensure content wraps if the text is too long for one line */
+      flex-wrap: wrap; 
+      /* Important: Re-center content when it wraps */
+      justify-content: center; 
+      text-align: center; /* Ensure any wrapped text lines are centered */
+      padding: 0 10px; /* Add a little horizontal padding so it doesn't touch the screen edges */
+  }
+
+  .company-logo {
+      /* INCREASED SIZE for better visibility on mobile */
+      height: 40px; 
+      margin-right: 10px;
+      /* If content wraps, you might want to remove the right margin and center it */
+      /* If you want the logo above the text: */
+      /* margin-bottom: 5px; 
+      margin-right: 0; 
+      width: 100%; */
+  }
+}
 
   /* Tech row */
   .tech-row{
