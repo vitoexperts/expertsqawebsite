@@ -530,67 +530,86 @@
   
 
 
-/* ---------- Team Carousel with Button Controls ---------- */
+/* ---------- Team Carousel ---------- */
 (function teamCarousel() {
-  const track = document.querySelector(".carousel-track");
-  const cards = document.querySelectorAll(".team-card");
-  const btnLeft = document.querySelector(".carousel-btn.left");
-  const btnRight = document.querySelector(".carousel-btn.right");
-  if (!track || !cards.length) return;
+  const viewport = document.querySelector(".carousel-viewport");
+  const track    = document.querySelector(".carousel-track");
+  const btnPrev  = document.querySelector(".carousel-btn--prev");
+  const btnNext  = document.querySelector(".carousel-btn--next");
+  const dotsWrap = document.getElementById("team-dots");
+  if (!track || !viewport) return;
 
-  let index = 0;
+  const cards = Array.from(track.querySelectorAll(".team-card"));
   const total = cards.length;
-  const visible = Math.floor(track.offsetWidth / (cards[0].offsetWidth + 20)); // how many visible
-  let interval;
+  let current = 0;
+  let autoTimer = null;
 
-  // Helper: move the carousel
-  function update() {
-    const cardWidth = cards[0].offsetWidth + 20; // 20px gap
-    const offset = -index * cardWidth;
-    track.style.transform = `translateX(${offset}px)`;
+  function stepPx() {
+    return cards[0] ? cards[0].offsetWidth + 18 : 218;
+  }
+  function visibleCount() {
+    return Math.max(1, Math.floor(viewport.offsetWidth / stepPx()));
+  }
+  function maxIdx() {
+    return Math.max(0, total - visibleCount());
   }
 
-  // Next and previous buttons
-  function next() {
-    index = (index + 1) % total;
-    update();
-  }
-  function prev() {
-    index = (index - 1 + total) % total;
-    update();
+  function goTo(idx) {
+    current = Math.max(0, Math.min(idx, maxIdx()));
+    track.style.transform = "translateX(-" + (current * stepPx()) + "px)";
+    updateDots();
+    if (btnPrev) btnPrev.disabled = current === 0;
+    if (btnNext) btnNext.disabled = current >= maxIdx();
   }
 
-  // Button listeners
-  btnRight.addEventListener("click", () => {
-    next();
-    resetAuto();
+  function buildDots() {
+    if (!dotsWrap) return;
+    var pages = Math.ceil(total / Math.max(1, visibleCount()));
+    dotsWrap.innerHTML = Array.from({ length: pages }, function(_, i) {
+      return '<button class="carousel-dot' + (i === 0 ? " active" : "") +
+             '" data-page="' + i + '" aria-label="Slide ' + (i + 1) + '"></button>';
+    }).join("");
+    dotsWrap.querySelectorAll(".carousel-dot").forEach(function(dot) {
+      dot.addEventListener("click", function() {
+        goTo(parseInt(dot.dataset.page) * visibleCount());
+        resetAuto();
+      });
+    });
+  }
+
+  function updateDots() {
+    if (!dotsWrap) return;
+    var pg = Math.floor(current / Math.max(1, visibleCount()));
+    dotsWrap.querySelectorAll(".carousel-dot").forEach(function(dot, i) {
+      dot.classList.toggle("active", i === pg);
+    });
+  }
+
+  function autoNext() { goTo(current >= maxIdx() ? 0 : current + 1); }
+  function startAuto() { autoTimer = setInterval(autoNext, 4000); }
+  function stopAuto()  { clearInterval(autoTimer); }
+  function resetAuto() { stopAuto(); startAuto(); }
+
+  if (btnPrev) btnPrev.addEventListener("click", function() { goTo(current - 1); resetAuto(); });
+  if (btnNext) btnNext.addEventListener("click", function() { goTo(current + 1); resetAuto(); });
+
+  viewport.addEventListener("mouseenter", stopAuto);
+  viewport.addEventListener("mouseleave", startAuto);
+
+  var touchStartX = 0;
+  viewport.addEventListener("touchstart", function(e) {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  viewport.addEventListener("touchend", function(e) {
+    var diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { goTo(diff > 0 ? current + 1 : current - 1); resetAuto(); }
   });
-  if (btnLeft) btnLeft.addEventListener("click", () => {
-    prev();
-    resetAuto();
-  });
 
-  // Auto-slide setup
-  function startAuto() {
-    interval = setInterval(next, 5000);
-  }
-  function stopAuto() {
-    clearInterval(interval);
-  }
-  function resetAuto() {
-    stopAuto();
-    startAuto();
-  }
+  window.addEventListener("resize", function() { buildDots(); goTo(Math.min(current, maxIdx())); });
 
-  // Pause on hover
-  track.addEventListener("mouseenter", stopAuto);
-  track.addEventListener("mouseleave", startAuto);
-
-  // Start carousel
+  buildDots();
+  goTo(0);
   startAuto();
-
-  // Responsive fix: re-calc on resize
-  window.addEventListener("resize", update);
 })();
 
   })();
