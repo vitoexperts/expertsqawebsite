@@ -1072,6 +1072,112 @@
     .carousel-btn { width: 34px; height: 34px; font-size: 11px; }
   }
 
+  /* ---------- WHAT HAPPENS NEXT ---------- */
+  .what-next {
+    text-align: center;
+    margin-top: 56px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .what-next-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
+    margin: 0 0 10px;
+  }
+
+  .what-next-title span {
+    color: var(--accent-2);
+  }
+
+  .what-next-sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0 0 40px;
+  }
+
+  .what-next-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .wn-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    flex-shrink: 0;
+  }
+
+  .wn-num {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    border: 2px solid rgba(86,167,65,0.55);
+    background: rgba(86,167,65,0.07);
+    color: var(--accent);
+    font-size: 26px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    position: relative;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 0 6px rgba(86,167,65,0.06);
+  }
+
+  .wn-step:hover .wn-num {
+    background: rgba(86,167,65,0.16);
+    box-shadow: 0 0 24px rgba(86,167,65,0.3);
+  }
+
+  .wn-step h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px;
+  }
+
+  .wn-step p {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+    max-width: 180px;
+  }
+
+  /* Connector line between steps */
+  .wn-connector {
+    flex: 1;
+    height: 2px;
+    max-width: 80px;
+    background: linear-gradient(90deg, rgba(86,167,65,0.4), rgba(86,167,65,0.15));
+    border-radius: 2px;
+    margin-top: 33px; /* vertically align with circle center */
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 680px) {
+    .what-next-steps {
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .wn-connector {
+      width: 2px;
+      height: 32px;
+      max-width: none;
+      margin: 0;
+      background: linear-gradient(180deg, rgba(86,167,65,0.4), rgba(86,167,65,0.15));
+    }
+    .wn-step { width: 100%; max-width: 260px; }
+  }
+
   /* ---------- CONTACT FORM STYLES ---------- */
 .contact-form form {
 	display: flex;
