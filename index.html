@@ -12,6 +12,7 @@
 </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Experts QA — software quality assurance specialists in Skopje. On-demand QA teams, dedicated QA resources, and managed QA services for startups and enterprises worldwide." />
   <title>Experts QA</title>
   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 
@@ -31,8 +32,6 @@
     <span></span>
   </div>
   <canvas id="bg-canvas"></canvas>
-  
-<canvas id="bg-canvas"></canvas>
 
 
   <div id="page-loader">
@@ -76,12 +75,12 @@
         <div class="hero-right">
           <div class="card-glass hero-card interactive-tilt" data-tilt>
             <div class="metrics">
-              <div class="metric"><div class="num" data-target="17">0</div><div class="label">Years QA</div></div>
+              <div class="metric"><div class="num" data-target="10">0</div><div class="label">Years QA</div></div>
               <div class="metric"><div class="num" data-target="150">0</div><div class="label">Projects</div></div>
               <div class="metric"><div class="num" data-target="64">0</div><div class="label">Test Devices</div></div>
             </div>
-            <!-- <div class="card-foot">Trusted QA partner — Skopje, North Macedonia</div>
-          </div> -->
+            <!-- <div class="card-foot">Trusted QA partner — Skopje, North Macedonia</div> -->
+          </div>
         </div>
       </div>
     </section>
@@ -95,81 +94,193 @@
           <article class="card-glass about-card"><div class="icon"><i class="fas fa-atom"></i></div><h3>About us</h3><p>Experts QA is a company specialized in software quality assurance. Based in Skopje, Macedonia, we service clients from all over the globe. With over 10 years of experience in Software Quality Assurance offering various types and levels of testing starting with functional and non-functional testing.</p></article>
           <article class="card-glass about-card"><div class="icon"><i class="fas fa-lightbulb"></i></div><h3>Vision</h3><p>We envision a future where we help our clients achieve their business goals by delivering superior software quality assurance services, while also providing a fulfilling work environment for our employees. We aim to expand our reach and diversify our services while maintaining a strong focus on client and employee satisfaction.</p></article>
           <article class="card-glass about-card"><div class="icon"><i class="fas fa-rocket"></i></div><h3>Mission</h3><p>To provide exceptional software quality assurance services to our clients, with a commitment to continuous innovation, improvement, and collaboration with our clients. We strive to exceed our clients' expectations and establish long-term partnerships with them.</p></article>
-        </div>
-        <p class="foundation-member">
-          <a href="https://robotframework.org/" target="_blank" rel="noopener noreferrer" class="foundation-link">
-            <img src="images/robotframework.svg" alt="Robot Framework" class="company-logo">
-          </a>
-          We are proud members of the Robot Framework Foundation.
-      </p>
-      </div>
+        
     </section>
 
-    <!-- SERVICES -->
     <!-- SERVICES -->
 <section id="services" class="panel dark-panel">
   <div class="container">
     <h2 class="section-title">OUR <span>SERVICES</span></h2>
 
-    <div class="grid service-grid">
-      <article class="card-glass service-card interactive-tilt" data-tilt data-service="on-demand">
-        <div class="icon"><i class="fas fa-users"></i></div>
-        <h4>On-Demand QA Teams</h4>
-        <p>Flexible QA teams for Functional, Automation, and Performance testing.</p>
-      </article>
+    <!-- Top 3-column layout -->
+    <div class="services-top">
 
-      <article class="card-glass service-card interactive-tilt" data-tilt data-service="dedicated">
-        <div class="icon"><i class="fas fa-laptop-code"></i></div>
-        <h4>Dedicated QA Resources</h4>
-        <p>Experienced QA engineers integrated into your existing teams.</p>
-      </article>
+      <!-- Flagship -->
+      <div class="card-glass service-flagship interactive-tilt" data-tilt>
+        <span class="svc-tag">NEW SERVICE</span>
+        <h3 class="svc-flagship-title">AGENTIC<br>TESTING</h3>
+        <p class="svc-desc">AI agents generate tests, plans and strategies, execute them across environments, triage failures and report generation — with a human expert validating every step of the process.</p>
+        <ul class="svc-bullets">
+          <li>Test generation from code diffs or project documentation</li>
+          <li>Automated execution across environments</li>
+          <li>AI-powered failure triage & report generation</li>
+          <li>Human review gate before every release decision</li>
+        </ul>
+        <a href="#contact" class="svc-learn-more" id="agentic-learn-more">LEARN MORE →</a>
+      </div>
 
-      <article class="card-glass service-card interactive-tilt" data-tilt data-service="managed">
-        <div class="icon"><i class="fas fa-cogs"></i></div>
-        <h4>Managed QA Services</h4>
-        <p>Standalone or specialized QA engagements as needed.</p>
-      </article>
+      <!-- Functional Testing flagship -->
+      <div class="card-glass service-flagship interactive-tilt" data-tilt>
+        <span class="svc-tag">CORE SERVICE</span>
+        <h3 class="svc-flagship-title">FUNCTIONAL<br>TESTING</h3>
+        <p class="svc-desc">Manual and automated functional testing across web, mobile, and API layers. Real engineers testing real user flows — covering the edge cases and context-driven scenarios automation alone cannot see.</p>
+        <ul class="svc-bullets">
+          <li>End-to-end user flow validation on web & mobile</li>
+          <li>Exploratory testing by certified QA engineers</li>
+          <li>Regression coverage on every sprint cycle</li>
+          <li>Detailed defect reports with reproduction steps</li>
+        </ul>
+        <a href="#" class="svc-learn-more" data-service-key="functional">LEARN MORE →</a>
+      </div>
+
+      <!-- Right: 3 stacked specialty items -->
+      <div class="service-right-col">
+        <div class="card-glass svc-right-item">
+          <span class="svc-category">AUTOMATION</span>
+          <h5>Test Automation</h5>
+          <p>Playwright, Cypress, Appium, Robot Framework. CI/CD integration and pipeline-ready test suites.</p>
+          <a href="#" class="svc-learn-more svc-learn-sm" data-service-key="automation">LEARN MORE →</a>
+        </div>
+        <div class="card-glass svc-right-item">
+          <span class="svc-category">MOBILE</span>
+          <h5>Mobile App Testing</h5>
+          <p>iOS and Android. Native and hybrid apps. Real devices and real conditions.</p>
+          <a href="#" class="svc-learn-more svc-learn-sm" data-service-key="mobile">LEARN MORE →</a>
+        </div>
+        <div class="card-glass svc-right-item">
+          <span class="svc-category">API</span>
+          <h5>API Testing</h5>
+          <p>Payload validation, header manipulation, and integration testing with Postman and automated suites.</p>
+          <a href="#" class="svc-learn-more svc-learn-sm" data-service-key="api">LEARN MORE →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom: 4 mini cards -->
+    <div class="services-bottom">
+      <div class="card-glass svc-mini">
+        <i class="fas fa-tachometer-alt svc-mini-icon"></i>
+        <h5>Performance Testing</h5>
+        <p>JMeter load testing. Stress and scalability analysis for apps under real-world pressure.</p>
+      </div>
+      <div class="card-glass svc-mini">
+        <i class="fas fa-universal-access svc-mini-icon"></i>
+        <h5>Accessibility Testing</h5>
+        <p>WCAG 2.1 compliance audits. Ensuring your app is usable by everyone.</p>
+      </div>
+      <div class="card-glass svc-mini">
+        <i class="fas fa-sync-alt svc-mini-icon"></i>
+        <h5>Regression Testing</h5>
+        <p>Every release verified. Automation covers happy paths; engineers focus on what changed.</p>
+      </div>
+      <div class="card-glass svc-mini">
+        <i class="fas fa-puzzle-piece svc-mini-icon"></i>
+        <h5>Integration Testing</h5>
+        <p>Third-party APIs, microservices, and payment gateways. Testing where systems connect.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- MODAL (hidden by default) -->
-<div id="service-modal" class="modal-overlay">
-  <div class="modal-card card-glass">
-    <span class="close-btn">&times;</span>
-    <div class="modal-content">
-      <h4 id="modal-title"></h4>
-      <p id="modal-description"></p>
-    </div>
-  </div>
-</div>
-
-    <!-- TEAM CAROUSEL -->
+    <!-- TEAM -->
     <section id="team" class="panel">
       <div class="container">
         <h2 class="section-title">OUR <span>TEAM</span></h2>
         <p class="lead center">Meet the specialists behind Experts QA.</p>
         <div class="team-carousel">
-          <!-- <button class="carousel-btn left"><i class="fa fa-chevron-left"></i></button> -->
-          <div class="carousel-track">
-            <div class="team-card card-glass"><img src="images/simona.png" alt="Simona"><h4>Simona Nikolovska</h4><p>Founder & CEO</p></div>
-            <div class="team-card card-glass"><img src="images/stefan.jpg" alt="Stefan"><h4>Stefan Petrov</h4><p>QA Lead</p></div>
-            <div class="team-card card-glass"><img src="images/david.jpg" alt="David"><h4>David Dimitrievski</h4><p>Automation Lead</p></div>
-            <div class="team-card card-glass"><img src="images/davor.jpeg" alt="Davor"><h4>Davor Stefanovski</h4><p>Automation Engineer</p></div>
-            <div class="team-card card-glass"><img src="images/branislav.png" alt="Branislav"><h4>Branislav Tomikj</h4><p>Project QA Lead</p></div>
-            <div class="team-card card-glass"><img src="images/martin.png" alt="Martin"><h4>Martin Noveski</h4><p>Automation Engineer</p></div>
-            <div class="team-card card-glass"><img src="images/viktorija.JPG" alt="Viktorija"><h4>Viktorija Janeva</h4><p>Automation Engineer</p></div>
-            <div class="team-card card-glass"><img src="images/dacko.JPG" alt="Dalibor"><h4>Dalibor Pavlovski</h4><p>Automation Lead</p></div>
-            <div class="team-card card-glass"><img src="images/vito.png" alt="Vito"><h4>Vitomir Kostojchinoski</h4><p>Automation Engineer</p></div>
-            <div class="team-card card-glass"><img src="images/sara.png" alt="Sara"><h4>Sara Zlatanovska</h4><p>QA Engineer</p></div>
-            <div class="team-card card-glass"><img src="images/angela.jpg" alt="Angela"><h4>Angela Ivanova</h4><p>QA Engineer</p></div>
-            <!-- <div class="team-card card-glass"><img src="images/elena.png" alt="Elena"><h4>Elena Trajceva</h4><p>QA Engineer</p></div> -->
-            <div class="team-card card-glass"><img src="images/jovana.png" alt="Jovana"><h4>Jovana Spasovska</h4><p>QA Engineer</p></div>
-            <div class="team-card card-glass"><img src="images/anamarija.png" alt="Ana Marija"><h4>Ana Marija Mircheska</h4><p>QA Engineer</p></div>
-            <div class="team-card card-glass"><img src="images/anastasija.png" alt="Anastasija"><h4>Anastasija Milanova</h4><p>QA Engineer</p></div>
+          <button class="carousel-btn carousel-btn--prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/simona.png" alt="Simona" loading="lazy"></div>
+            <h4>Simona Nikolovska</h4>
+            <span class="team-role team-role--lead">Founder &amp; CEO</span>
           </div>
-          <button class="carousel-btn right"><i class="fa fa-chevron-right"></i></button>
-        </div>
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/stefan.jpg" alt="Stefan" loading="lazy"></div>
+            <h4>Stefan Petrov</h4>
+            <span class="team-role team-role--lead">QA Lead</span>
+          </div>
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/david.jpg" alt="David" loading="lazy"></div>
+            <h4>David Dimitrievski</h4>
+            <span class="team-role team-role--lead">Automation Lead</span>
+          </div>
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/branislav.png" alt="Branislav" loading="lazy"></div>
+            <h4>Branislav Tomikj</h4>
+            <span class="team-role team-role--lead">Project QA Lead</span>
+          </div>
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/dacko.JPG" alt="Dalibor" loading="lazy"></div>
+            <h4>Dalibor Pavlovski</h4>
+            <span class="team-role team-role--lead">Automation Lead</span>
+          </div>
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/davor.jpeg" alt="Davor" loading="lazy"></div>
+            <h4>Davor Stefanovski</h4>
+            <span class="team-role team-role--lead">Automation Engineer</span>
+          </div>
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/martin.png" alt="Martin" loading="lazy"></div>
+            <h4>Martin Noveski</h4>
+            <span class="team-role team-role--lead">Automation Engineer</span>
+          </div>
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/viktorija.JPG" alt="Viktorija" loading="lazy"></div>
+            <h4>Viktorija Janeva</h4>
+            <span class="team-role team-role--lead">Automation Engineer</span>
+          </div>
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/vito.png" alt="Vito" loading="lazy"></div>
+            <h4>Vitomir Kostojchinoski</h4>
+            <span class="team-role team-role--lead">Automation Engineer</span>
+          </div>
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/sara.png" alt="Sara" loading="lazy"></div>
+            <h4>Sara Zlatanovska</h4>
+            <span class="team-role team-role--lead">QA Engineer</span>
+          </div>
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/angela.jpg" alt="Angela" loading="lazy"></div>
+            <h4>Angela Ivanova</h4>
+            <span class="team-role team-role--lead">QA Engineer</span>
+          </div>
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/jovana.png" alt="Jovana" loading="lazy"></div>
+            <h4>Jovana Spasovska</h4>
+            <span class="team-role team-role--lead">QA Engineer</span>
+          </div>
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/anastasija.png" alt="Anastasija" loading="lazy"></div>
+            <h4>Anastasija Milanova</h4>
+            <span class="team-role team-role--lead">QA Engineer</span>
+          </div>
+
+          <div class="team-card card-glass">
+            <div class="team-img-wrap"><img src="images/katerina.JPG" alt="Katerina" loading="lazy"></div>
+            <h4>Katerina Koprivnjak</h4>
+            <span class="team-role team-role--lead">QA Engineer</span>
+          </div>
+
+            </div><!-- /.carousel-track -->
+          </div><!-- /.carousel-viewport -->
+          <button class="carousel-btn carousel-btn--next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+        </div><!-- /.team-carousel -->
+        <div class="carousel-dots" id="team-dots"></div>
       </div>
     </section>
 
@@ -179,15 +290,58 @@
         <h2 class="section-title">TECH <span>STACK</span></h2>
         
         <div class="tech-row">
-          <div class="tech-item"><img src="images/robotframework.svg" alt="RobotFramework"><span>Robot Framework</span></div>
-          <div class="tech-item"><img src="images/playwright.svg" alt="Playwright"><span>Playwright</span></div>
-          <div class="tech-item"><img src="images/cypress.svg" alt="Cypress"><span>Cypress</span></div>
-          <div class="tech-item"><img src="images/appium.svg" alt="Appium"><span>Appium</span></div>
-          <div class="tech-item"><img src="images/postman-icon.svg" alt="Postman"><span>Postman</span></div>
-          <div class="tech-item"><img src="images/github.svg" alt="GitHub"><span>GitHub</span></div>
-          <div class="tech-item"><img src="images/docker.svg" alt="Docker"><span>Docker</span></div>
-          <div class="tech-item"><img src="images/jira.svg" alt="Jira"><span>Jira</span></div>
+          <div class="tech-item tech-item--rf">
+            <div class="rf-member-badge">
+              <!-- <i class="fas fa-cloud"></i> -->
+              <span>Proud members of<br><strong>Robot Framework </strong> <a href="https://robotframework.org/foundation/">Foundation</a></span>
+            </div>
+            <img src="images/robotframework.svg" alt="RobotFramework" loading="lazy"><span>Robot Framework</span>
+          </div>
+          <div class="tech-item"><img src="images/playwright.svg" alt="Playwright" loading="lazy"><span>Playwright</span></div>
+          <div class="tech-item"><img src="images/cypress.svg" alt="Cypress" loading="lazy"><span>Cypress</span></div>
+          <div class="tech-item"><img src="images/appium.svg" alt="Appium" loading="lazy"><span>Appium</span></div>
+          <div class="tech-item"><img src="images/postman-icon.svg" alt="Postman" loading="lazy"><span>Postman</span></div>
+          <div class="tech-item"><img src="images/github.svg" alt="GitHub" loading="lazy"><span>GitHub</span></div>
+          <div class="tech-item"><img src="images/docker.svg" alt="Docker" loading="lazy"><span>Docker</span></div>
+          <div class="tech-item"><img src="images/jira.svg" alt="Jira" loading="lazy"><span>Jira</span></div>
+          <div class="tech-item"><img src="images/claude.svg" alt="Claude AI" loading="lazy"><span>Claude AI</span></div>
         </div>
+
+        <!-- In-house tools -->
+        <div class="inhouse-wrap">
+          <div class="inhouse-header">
+            <span class="inhouse-eyebrow"><i class="fas fa-flask"></i> Built in-house</span>
+            <h3 class="inhouse-title">Our Proprietary <span>Tools</span></h3>
+            <p class="inhouse-sub">Purpose-built software developed by the Experts QA team to power our internal workflows.</p>
+          </div>
+          <div class="inhouse-grid">
+            <div class="card-glass inhouse-card">
+              <div class="inhouse-icon-wrap">
+                <i class="fas fa-clipboard-list"></i>
+              </div>
+              <h4>Test Case Manager</h4>
+              <p>Structured test case authoring, versioning, and execution tracking. Supports manual and automated runs with full traceability to requirements.</p>
+              <span class="inhouse-badge">Internal Tool</span>
+            </div>
+            <div class="card-glass inhouse-card">
+              <div class="inhouse-icon-wrap">
+                <i class="fas fa-boxes"></i>
+              </div>
+              <h4>Inventory Manager</h4>
+              <p>Real-time tracking of test devices, licenses, and environments. Ensures the right resources are allocated to the right projects at all times.</p>
+              <span class="inhouse-badge">Internal Tool</span>
+            </div>
+            <div class="card-glass inhouse-card">
+              <div class="inhouse-icon-wrap">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4>Security Check Tool</h4>
+              <p>Automated surface-level security scanning integrated into CI pipelines. Flags common vulnerabilities, misconfigurations, and exposed endpoints before release.</p>
+              <span class="inhouse-badge">Internal Tool</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -195,6 +349,7 @@
     <section id="contact" class="panel">
       <div class="container">
         <h2 class="section-title">GET <span>IN TOUCH</span></h2>
+
         <div class="grid contact-grid">
           <aside class="card-glass contact-info">
             <h3>Contact</h3>
@@ -212,9 +367,9 @@
             <h3>Meet us on</h3>
 
             <div class="social-links">
-              <a href="https://mk.linkedin.com/company/expertsqa" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="https://www.facebook.com/expertsqa" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-              <a href="https://www.instagram.com/expertsqa" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="https://mk.linkedin.com/company/expertsqa" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.facebook.com/expertsqa" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="https://www.instagram.com/expertsqa" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
           </aside>
           <div class="card-glass contact-form">
@@ -229,11 +384,117 @@
             </form>
           </div>
         </div>
+
+        <!-- What Happens Next -->
+        <div class="what-next">
+          <h3 class="what-next-title">HOW WE <span>GET STARTED</span></h3>
+          <p class="what-next-sub">Three focused steps. No lengthy procurement. No onboarding delays.</p>
+          <div class="what-next-steps">
+
+            <div class="wn-step">
+              <div class="wn-num">1</div>
+              <h4>QA Audit &amp; Alignment</h4>
+              <p>We review your codebase, CI/CD pipeline, and current test coverage to pinpoint exactly where quality is at risk.</p>
+            </div>
+
+            <div class="wn-connector" aria-hidden="true"></div>
+
+            <div class="wn-step">
+              <div class="wn-num">2</div>
+              <h4>Strategy &amp; Engagement Plan</h4>
+              <p>A structured QA plan built around your release cadence, risk profile, and team workflow — delivered within 48 hours.</p>
+            </div>
+
+            <div class="wn-connector" aria-hidden="true"></div>
+
+            <div class="wn-step">
+              <div class="wn-num">3</div>
+              <h4>Embedded &amp; Running</h4>
+              <p>Our engineers integrate directly into your pipeline — pull requests, test reports, and standups from day one.</p>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
   </main>
 
-  <footer class="footer"><div class="container"><p>© <span id="year"></span> Experts QA</p></div></footer>
+<!-- GENERIC SERVICE MODAL -->
+<div id="service-detail-modal" class="modal-overlay">
+  <div class="modal-card agentic-modal-card">
+    <button class="svc-modal-close" aria-label="Close">&times;</button>
+    <div class="agentic-modal-body" id="svc-modal-body">
+      <!-- Populated by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- AGENTIC TESTING MODAL -->
+<div id="agentic-modal" class="modal-overlay">
+  <div class="modal-card agentic-modal-card">
+    <button class="agentic-close-btn" aria-label="Close">&times;</button>
+    <div class="agentic-modal-body">
+
+      <span class="svc-tag svc-tag-glow">NEW SERVICE</span>
+      <h3 class="agentic-modal-title">Agentic QA Testing</h3>
+      <p class="agentic-modal-lead">AI agents and human experts working in a closed loop — where AI handles speed and scale, and humans ensure accuracy and judgment at every step.</p>
+
+      <h4 class="agentic-section-hd">How It Works</h4>
+      <div class="agentic-steps">
+        <div class="agentic-step">
+          <div class="step-num">01</div>
+          <div>
+            <strong>AI Generates Tests</strong>
+            <p>From pull requests, code diffs, or project documentation, AI agents analyse changes and generate relevant test cases — covering functional flows, edge cases, and regression scenarios automatically.</p>
+          </div>
+        </div>
+        <div class="agentic-step">
+          <div class="step-num">02</div>
+          <div>
+            <strong>Human Validates the Test Plan</strong>
+            <p>A QA engineer reviews the generated test suite, removes false positives, adds domain-specific context, and approves the scope before any execution begins.</p>
+          </div>
+        </div>
+        <div class="agentic-step">
+          <div class="step-num">03</div>
+          <div>
+            <strong>AI Executes Across Environments</strong>
+            <p>Tests run in parallel across browsers, devices, and environments. The agent monitors results in real time, collecting traces, screenshots, network logs, and console output for every failure.</p>
+          </div>
+        </div>
+        <div class="agentic-step">
+          <div class="step-num">04</div>
+          <div>
+            <strong>AI Triages & Generates Reports</strong>
+            <p>Failures are automatically classified as flaky, environment-related, or genuine defects. The AI produces a structured report with reproduction steps, severity ratings, and root cause suggestions.</p>
+          </div>
+        </div>
+        <div class="agentic-step">
+          <div class="step-num">05</div>
+          <div>
+            <strong>Human Release Gate</strong>
+            <p>No code ships without human sign-off. A QA engineer reviews the AI triage, investigates ambiguous failures, and makes the final go/no-go call before every release.</p>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="agentic-section-hd">What You Get</h4>
+      <div class="agentic-benefits">
+        <div class="benefit-item"><i class="fas fa-bolt"></i><span>Faster test coverage generated with every PR</span></div>
+        <div class="benefit-item"><i class="fas fa-shield-alt"></i><span>Human oversight at every critical decision point</span></div>
+        <div class="benefit-item"><i class="fas fa-chart-line"></i><span>Fewer escaped defects reaching production</span></div>
+        <div class="benefit-item"><i class="fas fa-code-branch"></i><span>Native CI/CD pipeline integration</span></div>
+        <div class="benefit-item"><i class="fas fa-file-alt"></i><span>AI-generated test reports & release summaries</span></div>
+        <div class="benefit-item"><i class="fas fa-users"></i><span>QA scales without growing headcount</span></div>
+      </div>
+
+      <a href="#contact" class="btn btn-glow agentic-modal-cta">Get Started →</a>
+    </div>
+  </div>
+</div>
+
+  <footer class="footer"><div class="container"><p>Built by Experts QA &copy; <span id="year"></span></p></div></footer>
   <button id="scrollTop" class="scroll-top"><i class="fa fa-arrow-up"></i></button>
   <script src="js/main.js"></script>
   
