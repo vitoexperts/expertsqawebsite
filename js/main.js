@@ -97,73 +97,7 @@
         obs.observe(el);
       });
     })();
-      // === SERVICES MODAL HANDLER ===
 
-      const serviceData = {
-        "on-demand": {
-          title: "On-Demand QA Teams",
-          description: `
-            Offering hourly or fixed price options for whole QA teams with services for Functional testing, both Manual and Automation, and Performance testing. This includes setting up QA processes, both as a from scratch for new projects when they are created, as well as trying to seamlessly integrate to an existing Dev process.
-							Every team has a Lead person that helps establish QA process and maintain the process and quality of work for the whole team, ensuring that the team is on track and ready to deliver
-          `
-        },
-        "dedicated": {
-          title: "Dedicated QA Resources",
-          description: `
-            Offering the possibility for a dedicated team member as an addition to an existing QA team, whether is Manual, Automation Functional testing or Performance engineer.
-							Depending on the resource level, we offer support from a Senior/Experienced engineer if lower level QA’s are hired.
-          `
-        },
-        "managed": {
-          title: "Managed QA Services",
-          description: `
-            We offer QA services as a standalone, not integrated, or simply in a limited timely manner. These scenarios are usually for two types of services. First is for agencies, or companies that need periodical checks, for smaller projects that are about to be shipped to production or simply for Maintenance purposes (periodical checks or when there are versions upgrades for any part of the system). Second is for specialized types of testing like Performance, Load or Stress testing where we are hired when needed, even if there is an existing QA team working on a project.
-          `
-        }
-      };
-
-      // Wait for DOM to load before accessing elements
-      document.addEventListener("DOMContentLoaded", () => {
-        const modal = document.getElementById("service-modal");
-        const modalTitle = document.getElementById("modal-title");
-        const modalDesc = document.getElementById("modal-description");
-        const closeBtn = document.querySelector(".close-btn");
-
-        // Open modal on click
-        document.querySelectorAll(".service-card").forEach(card => {
-          card.addEventListener("click", () => {
-            const key = card.dataset.service;
-            const service = serviceData[key];
-            if (!service) return;
-            modalTitle.innerText = service.title;
-            modalDesc.innerHTML = service.description;
-            modal.classList.add("active");
-          });
-        });
-
-        // Close modal on overlay or button click
-        closeBtn.addEventListener("click", () => modal.classList.remove("active"));
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) modal.classList.remove("active");
-        });
-      });
-
-  
-    /* ---------- Carousel (testimonials) ---------- */
-    (function carousel() {
-      const slides = $$(".carousel .slide");
-      if (!slides.length) return;
-      let idx = 0;
-      const show = (n) => {
-        slides.forEach((s, i) => s.classList.toggle("active", i === n));
-      };
-      show(0);
-      setInterval(() => {
-        idx = (idx + 1) % slides.length;
-        show(idx);
-      }, 4800);
-    })();
-  
     /* ---------- Contact form (mailto) ---------- */
     (function forms() {
       const contactForm = $("#contactForm");
@@ -183,7 +117,9 @@
     /* ---------- Scroll to top ---------- */
     const scrollBtn = $("#scrollTop");
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 360) scrollBtn.classList.add("show"); else scrollBtn.classList.remove("show");
+      if (scrollBtn) {
+        if (window.scrollY > 360) scrollBtn.classList.add("show"); else scrollBtn.classList.remove("show");
+      }
       const navWrap = document.querySelector(".nav-wrap");
       if (navWrap) {
         if (window.scrollY > 24) navWrap.classList.add("scrolled"); else navWrap.classList.remove("scrolled");
@@ -335,6 +271,257 @@
       }
     });
   
+    /* ---------- Generic Service Modals ---------- */
+    (function serviceModals() {
+      const modal = document.getElementById("service-detail-modal");
+      const body  = document.getElementById("svc-modal-body");
+      const closeBtn = modal && modal.querySelector(".svc-modal-close");
+      if (!modal || !body) return;
+
+      const data = {
+        functional: {
+          tag: "CORE SERVICE", glow: false,
+          title: "Functional Testing",
+          lead: "Real engineers testing real scenarios — every click, every flow, every edge case your users might encounter.",
+          features: [
+            { title: "Requirements Analysis", desc: "We review specs, user stories, and acceptance criteria to design comprehensive test cases before a single line runs." },
+            { title: "Manual Exploratory Testing", desc: "Experienced engineers explore the app as real users, uncovering usability issues and edge cases that scripted tests miss." },
+            { title: "Automation-Assisted Execution", desc: "Repetitive regression flows are automated so engineers can focus on complex, high-value scenarios." },
+            { title: "Defect Reporting & Tracking", desc: "Clear, reproducible bug reports with screenshots, logs, and step-by-step reproduction details integrated into your tracker." },
+            { title: "Test Coverage Reporting", desc: "Detailed coverage metrics mapped to requirements and acceptance criteria so nothing ships untested." }
+          ],
+          benefits: [
+            { icon: "fa-bug", text: "Early defect detection before production" },
+            { icon: "fa-check-circle", text: "Full requirements traceability" },
+            { icon: "fa-rocket", text: "Faster, confident release cycles" },
+            { icon: "fa-users", text: "Works alongside existing QA or dev teams" },
+            { icon: "fa-file-alt", text: "Structured defect & coverage reports" },
+            { icon: "fa-shield-alt", text: "Reduced production incidents" }
+          ]
+        },
+        automation: {
+          tag: "AUTOMATION", glow: false,
+          title: "Test Automation",
+          lead: "Pipeline-ready test suites built with the right framework for your stack — delivering fast feedback on every commit.",
+          features: [
+            { title: "Framework Selection & Setup", desc: "We assess your stack and select the best fit: Playwright, Cypress, Appium, or Robot Framework — configured and ready to run." },
+            { title: "Scalable Test Suite Development", desc: "Maintainable suites built with page object models, reusable components, and clear naming conventions your team can own." },
+            { title: "CI/CD Pipeline Integration", desc: "Tests plug into GitHub Actions, GitLab CI, Jenkins, or any pipeline — running automatically on every push or pull request." },
+            { title: "Parallel & Cross-Browser Execution", desc: "Tests run simultaneously across Chrome, Firefox, Safari, and Edge — cutting overall execution time dramatically." },
+            { title: "Self-Healing Selectors", desc: "Smart selector strategies reduce maintenance overhead when UI elements change, keeping the suite green." },
+            { title: "Reporting & Alerting", desc: "Allure and HTML reports published to your dashboard, with Slack or email alerts on failures for immediate visibility." }
+          ],
+          benefits: [
+            { icon: "fa-bolt", text: "Up to 10x faster regression cycles" },
+            { icon: "fa-code-branch", text: "Runs on every PR automatically" },
+            { icon: "fa-desktop", text: "Cross-browser & cross-device coverage" },
+            { icon: "fa-chart-line", text: "Lower long-term QA cost" },
+            { icon: "fa-bell", text: "Instant failure notifications" },
+            { icon: "fa-plug", text: "Integrates with any CI/CD pipeline" }
+          ]
+        },
+        mobile: {
+          tag: "MOBILE", glow: false,
+          title: "Mobile App Testing",
+          lead: "iOS and Android testing on 64+ real devices — native, hybrid, and cross-platform apps under real-world conditions.",
+          features: [
+            { title: "Real Device Lab — 64+ Devices", desc: "We test on physical iOS and Android devices across multiple OS versions, screen sizes, and manufacturers — not just simulators." },
+            { title: "Native & Hybrid App Support", desc: "Full coverage for native Swift/Kotlin apps and hybrid frameworks including React Native, Flutter, and Ionic." },
+            { title: "Appium Automation", desc: "Automated mobile regression and smoke suites built with Appium, integrated into your CI/CD pipeline." },
+            { title: "Performance & Battery Testing", desc: "CPU usage, memory consumption, battery drain, and network behaviour profiled under realistic load conditions." },
+            { title: "Gesture & Sensor Testing", desc: "Touch gestures, swipes, pinch-zoom, camera, GPS, biometrics, and device sensor interactions validated on real hardware." },
+            { title: "App Store Readiness", desc: "Pre-submission checks aligned with Apple App Store and Google Play guidelines to reduce rejection risk." }
+          ],
+          benefits: [
+            { icon: "fa-mobile-alt", text: "64+ real iOS & Android devices" },
+            { icon: "fa-layer-group", text: "Native, hybrid, cross-platform coverage" },
+            { icon: "fa-cogs", text: "Automated regression with Appium" },
+            { icon: "fa-tachometer-alt", text: "Performance & battery profiling" },
+            { icon: "fa-wifi", text: "Real network condition simulation" },
+            { icon: "fa-store", text: "App Store pre-submission validation" }
+          ]
+        },
+        api: {
+          tag: "API", glow: false,
+          title: "API Testing",
+          lead: "Comprehensive validation of REST, GraphQL, and SOAP APIs — from payload correctness to security and performance.",
+          features: [
+            { title: "REST & GraphQL Validation", desc: "Endpoint testing covering request/response schemas, status codes, headers, pagination, and error handling across all API surfaces." },
+            { title: "Contract Testing", desc: "Consumer-driven contracts ensure API providers and consumers stay in sync as services evolve independently." },
+            { title: "Authentication & Security Checks", desc: "OAuth2, JWT, API key validation, injection attack prevention, and rate limiting verified across all protected endpoints." },
+            { title: "API Load & Stress Testing", desc: "High-concurrency performance testing with JMeter and k6 to validate throughput, latency, and error rates under load." },
+            { title: "Automated Regression with Newman", desc: "Postman collections executed automatically via Newman as part of every CI/CD pipeline run." },
+            { title: "Mock & Stub Integration", desc: "Testing services in isolation using mocks and stubs to eliminate dependencies on unavailable third-party systems." }
+          ],
+          benefits: [
+            { icon: "fa-check-double", text: "Full endpoint & schema coverage" },
+            { icon: "fa-file-contract", text: "Contract-driven API validation" },
+            { icon: "fa-lock", text: "Security & auth vulnerability detection" },
+            { icon: "fa-chart-bar", text: "Performance benchmarking under load" },
+            { icon: "fa-code-branch", text: "CI/CD integration via Newman" },
+            { icon: "fa-cubes", text: "Isolated service testing with mocks" }
+          ]
+        },
+        performance: {
+          tag: "PERFORMANCE", glow: false,
+          title: "Performance Testing",
+          lead: "Stress, load, and scalability testing that gives you confidence your application holds up when it matters most.",
+          features: [
+            { title: "Load Testing", desc: "Simulating expected peak traffic volumes to validate system behaviour, response times, and throughput under normal high-load conditions." },
+            { title: "Stress Testing", desc: "Pushing the system progressively beyond capacity to identify breaking points, failure modes, and graceful degradation behaviour." },
+            { title: "Spike Testing", desc: "Simulating sudden, sharp traffic surges to measure how quickly the system responds and recovers from unexpected demand." },
+            { title: "Soak Testing", desc: "Sustained load over extended periods to detect memory leaks, connection pool exhaustion, and performance degradation over time." },
+            { title: "Bottleneck Analysis", desc: "Deep profiling of database queries, API latency, server CPU/memory, and network throughput to pinpoint root causes." },
+            { title: "Performance Reports & SLA Validation", desc: "Baseline metrics, trend analysis, and clear recommendations mapped to your SLA thresholds and business requirements." }
+          ],
+          benefits: [
+            { icon: "fa-server", text: "Confident scaling & capacity planning" },
+            { icon: "fa-search", text: "Bottleneck identification before launch" },
+            { icon: "fa-tools", text: "JMeter & k6 tooling" },
+            { icon: "fa-cloud", text: "Cloud-based load generation" },
+            { icon: "fa-handshake", text: "SLA & SLO validation" },
+            { icon: "fa-file-alt", text: "Detailed performance reports" }
+          ]
+        },
+        accessibility: {
+          tag: "ACCESSIBILITY", glow: false,
+          title: "Accessibility Testing",
+          lead: "WCAG 2.1-compliant audits combining automated scanning and real assistive technology testing for truly inclusive products.",
+          features: [
+            { title: "WCAG 2.1 Compliance Audits", desc: "Structured testing against Level A, AA, and AAA success criteria — covering perceivability, operability, understandability, and robustness." },
+            { title: "Screen Reader Testing", desc: "Real testing with NVDA, JAWS, and VoiceOver to validate that all content and interactions work correctly with assistive technology." },
+            { title: "Keyboard Navigation", desc: "Full keyboard operability verification including focus management, tab order, skip links, and keyboard trap prevention." },
+            { title: "Colour Contrast & Visual Design", desc: "Contrast ratio checks for text and interactive elements, text sizing validation, and visual presentation requirements." },
+            { title: "Automated CI/CD Scanning", desc: "axe-core and Lighthouse integrated into your pipeline for continuous accessibility monitoring on every build." },
+            { title: "VPAT Generation", desc: "Voluntary Product Accessibility Template documentation to support enterprise procurement and legal compliance requirements." }
+          ],
+          benefits: [
+            { icon: "fa-universal-access", text: "WCAG 2.1 A / AA / AAA coverage" },
+            { icon: "fa-assistive-listening-systems", text: "Real screen reader validation" },
+            { icon: "fa-keyboard", text: "Full keyboard operability checks" },
+            { icon: "fa-code-branch", text: "Automated CI/CD integration" },
+            { icon: "fa-file-alt", text: "VPAT documentation" },
+            { icon: "fa-gavel", text: "Legal compliance support" }
+          ]
+        },
+        regression: {
+          tag: "REGRESSION", glow: false,
+          title: "Regression Testing",
+          lead: "Every release verified — automation covers the happy paths so your engineers can focus on what changed.",
+          features: [
+            { title: "Automated Smoke Tests", desc: "Fast, lightweight checks triggered on every commit to catch critical breakages immediately and keep the pipeline green." },
+            { title: "Full Regression Suites", desc: "Comprehensive functional coverage executed before every release to confirm existing features remain unaffected by new changes." },
+            { title: "Risk-Based Prioritisation", desc: "Test effort focused on highest-impact areas based on code change analysis, reducing execution time without sacrificing coverage." },
+            { title: "Parallel Multi-Environment Execution", desc: "Suites run simultaneously across staging, UAT, and pre-production environments to cut total execution time." },
+            { title: "Flaky Test Detection & Quarantine", desc: "Automated identification of unstable tests with quarantine workflows to keep pipeline results reliable and trustworthy." },
+            { title: "Regression Trend Reporting", desc: "Historical pass/fail trend analysis surfacing recurring problem areas and measuring the impact of fixes over time." }
+          ],
+          benefits: [
+            { icon: "fa-check-circle", text: "Confidence in every release" },
+            { icon: "fa-filter", text: "Risk-based test prioritisation" },
+            { icon: "fa-bolt", text: "Fast smoke tests on every PR" },
+            { icon: "fa-random", text: "Flaky test detection & quarantine" },
+            { icon: "fa-chart-line", text: "Historical trend analysis" },
+            { icon: "fa-layer-group", text: "Parallel multi-environment runs" }
+          ]
+        },
+        integration: {
+          tag: "INTEGRATION", glow: false,
+          title: "Integration Testing",
+          lead: "Testing where systems connect — third-party APIs, microservices, payment gateways, and event-driven architectures.",
+          features: [
+            { title: "Third-Party API Integration", desc: "End-to-end validation of integrations with payment gateways, CRMs, ERPs, analytics platforms, and external service providers." },
+            { title: "Microservices Testing", desc: "Service-to-service communication, data contracts, circuit breaker behaviour, and error propagation validated in realistic environments." },
+            { title: "Database Integration", desc: "ORM behaviour, query correctness, migration integrity, transactions, and data consistency across service boundaries." },
+            { title: "Message Queue & Event Testing", desc: "Kafka, RabbitMQ, and SQS integration validation covering message ordering, delivery guarantees, and consumer behaviour." },
+            { title: "End-to-End Workflow Testing", desc: "Full business flow validation across multiple systems — from user action through every downstream service to final state." },
+            { title: "Environment Parity Testing", desc: "Configuration drift detection between staging and production environments to prevent integration failures at release." }
+          ],
+          benefits: [
+            { icon: "fa-plug", text: "Third-party API & gateway coverage" },
+            { icon: "fa-cubes", text: "Microservices contract validation" },
+            { icon: "fa-database", text: "Database & migration integrity" },
+            { icon: "fa-exchange-alt", text: "Event-driven architecture testing" },
+            { icon: "fa-sitemap", text: "End-to-end workflow coverage" },
+            { icon: "fa-equals", text: "Staging/production parity checks" }
+          ]
+        }
+      };
+
+      function buildModal(key) {
+        const d = data[key];
+        if (!d) return;
+        const tagClass = d.glow ? "svc-tag svc-tag-glow" : "svc-tag";
+        const featuresHtml = d.features.map(f => `
+          <div class="agentic-step">
+            <div class="step-num">${String(d.features.indexOf(f) + 1).padStart(2, "0")}</div>
+            <div><strong>${f.title}</strong><p>${f.desc}</p></div>
+          </div>`).join("");
+        const benefitsHtml = d.benefits.map(b => `
+          <div class="benefit-item"><i class="fas ${b.icon}"></i><span>${b.text}</span></div>`).join("");
+        body.innerHTML = `
+          <span class="${tagClass}">${d.tag}</span>
+          <h3 class="agentic-modal-title">${d.title}</h3>
+          <p class="agentic-modal-lead">${d.lead}</p>
+          <h4 class="agentic-section-hd">How It Works</h4>
+          <div class="agentic-steps">${featuresHtml}</div>
+          <h4 class="agentic-section-hd">What You Get</h4>
+          <div class="agentic-benefits">${benefitsHtml}</div>
+          <a href="#contact" class="btn btn-glow agentic-modal-cta svc-generic-cta">Get Started →</a>`;
+        // close modal when CTA is clicked (smooth scroll handled by existing anchor listener)
+        body.querySelector(".svc-generic-cta").addEventListener("click", closeModal);
+      }
+
+      function openModal(key) {
+        buildModal(key);
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+        modal.scrollTop = 0;
+      }
+      function closeModal() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      closeBtn.addEventListener("click", closeModal);
+      modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+
+      document.querySelectorAll("[data-service-key]").forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          openModal(link.dataset.serviceKey);
+        });
+      });
+    })();
+
+    /* ---------- Agentic Testing Modal ---------- */
+    (function agenticModal() {
+      const trigger = document.getElementById("agentic-learn-more");
+      const modal = document.getElementById("agentic-modal");
+      const closeBtn = modal && modal.querySelector(".agentic-close-btn");
+      if (!trigger || !modal) return;
+
+      const open = (e) => {
+        e.preventDefault();
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
+      const close = () => {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      };
+
+      trigger.addEventListener("click", open);
+      closeBtn.addEventListener("click", close);
+      modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+
+      // Close modal CTA should close modal then scroll to contact
+      const cta = modal.querySelector(".agentic-modal-cta");
+      if (cta) cta.addEventListener("click", () => close());
+    })();
+
     /* ---------- Add fade-up to main sections ---------- */
     ["#home", "#about", "#services", "#team", "#tech", "#testimonials", "#contact"].forEach(id => {
       const el = document.querySelector(id);
@@ -378,7 +565,7 @@
     next();
     resetAuto();
   });
-  btnLeft.addEventListener("click", () => {
+  if (btnLeft) btnLeft.addEventListener("click", () => {
     prev();
     resetAuto();
   });
